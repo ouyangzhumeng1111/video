@@ -26,11 +26,11 @@ wait
 printf "file 'a.mp4'\nfile 'b.mp4'\n" > $OUT/chunks/list.txt
 ffmpeg -hide_banner -loglevel error -y -f concat -safe 0 -i $OUT/chunks/list.txt -c copy $OUT/chunks/picture.mp4
 
-# 3) master: light film grain, H.264 High 1080p30 + AAC 48 kHz
-ENC="-c:v libx264 -preset slow -crf 17 -profile:v high -pix_fmt yuv420p -r 30 -colorspace bt709 -color_primaries bt709 -color_trc bt709 -c:a aac -b:a 256k -ar 48000 -movflags +faststart -shortest"
+# 3) master: H.264 High 1080p30 + AAC 48 kHz (renderer already dithers, no extra grain)
+ENC="-c:v libx264 -preset slow -crf 18 -profile:v high -pix_fmt yuv420p -r 30 -colorspace bt709 -color_primaries bt709 -color_trc bt709 -c:a aac -b:a 256k -ar 48000 -movflags +faststart -shortest"
 ffmpeg -hide_banner -loglevel error -y -i $OUT/chunks/picture.mp4 -i $OUT/mix_final.wav \
-  -vf "noise=c0s=3:c0f=t" $ENC $OUT/TradeMind_AI_SDR_60s.mp4
+  $ENC $OUT/TradeMind_AI_SDR_60s.mp4
 # 4) version with burned-in narration subtitles
 ffmpeg -hide_banner -loglevel error -y -i $OUT/chunks/picture.mp4 -i $OUT/mix_final.wav \
-  -vf "noise=c0s=3:c0f=t,ass=$OUT/narration.ass" $ENC $OUT/TradeMind_AI_SDR_60s_subtitled.mp4
+  -vf "ass=$OUT/narration.ass" $ENC $OUT/TradeMind_AI_SDR_60s_subtitled.mp4
 echo done

@@ -12,7 +12,7 @@ v2 按反馈改为更自然、有节奏感的配音：朗读速度从每秒约 4
 | `output/TradeMind_AI_SDR_female.mp4` | 女声版 |
 | `output/TradeMind_AI_SDR_<voice>_subtitled.mp4` | 同上，另外烧录旁白字幕（适合静音自动播放） |
 | `output/narration_<voice>.srt` | 旁白软字幕 |
-| `output/contact_sheet.jpg` | 每 2 秒一帧的缩略审片图 |
+| `output/contact_sheet.jpg` | 每 2 秒一帧的缩略审片图（男声版画面，两版画面相同） |
 
 规格：1920×1080、30fps、H.264 High、AAC 48kHz 256kbps，响度 −16 LUFS / 真峰值 −1.5 dBTP。男女声两版画面、剪辑、配乐完全相同，只有人声不同。
 

@@ -22,7 +22,7 @@ const dpr = Number(argv.dpr ?? 1);
 const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.json': 'application/json', '.png': 'image/png', '.woff2': 'font/woff2', '.webp': 'image/webp' };
 const server = http.createServer((req, res) => {
   const url = decodeURIComponent(req.url.split('?')[0]);
-  const file = path.join(root, url.startsWith('/render/') || url.startsWith('/assets/') ? url : '/render' + url);
+  const file = path.join(root, url.startsWith('/render/') || url.startsWith('/assets/') || url.startsWith('/output/') ? url : '/render' + url);
   if (!file.startsWith(root) || !fs.existsSync(file) || fs.statSync(file).isDirectory()) { res.writeHead(404); res.end(); return; }
   res.writeHead(200, { 'Content-Type': MIME[path.extname(file)] ?? 'application/octet-stream' });
   fs.createReadStream(file).pipe(res);
@@ -55,7 +55,7 @@ if (argv.stills) {
     console.log(`still t=${t} ${Date.now() - t0}ms`);
   }
 } else {
-  const from = Number(argv.from ?? 0), to = Number(argv.to ?? 60);
+  const from = Number(argv.from ?? 0), to = Number(argv.to ?? await page.evaluate('window.__duration'));
   const f0 = Math.round(from * fps), f1 = Math.round(to * fps);
   const out = path.resolve(argv.out ?? path.join(root, 'output/video_only.mp4'));
   const ff = spawn('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-c:v', 'mjpeg', '-framerate', String(fps), '-i', '-',

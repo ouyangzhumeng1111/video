@@ -60,7 +60,20 @@ async function boot() {
   const comp = new Compositor(renderer, W * DPR, H * DPR);
   const overlay = new Overlay(document.getElementById('ui'), assets);
 
-  window.renderAt = (t) => {
+  // Edit timeline: the picture is authored on the 60 s design timeline and
+  // re-cut to the narration (output/timeline.json, built by audio/timeline.py).
+  let tl = null;
+  try { const r = await fetch('../output/timeline.json'); if (r.ok) tl = await r.json(); } catch (e) { tl = null; }
+  const warp = (x, src, dst) => {
+    if (x <= src[0]) return dst[0] + (x - src[0]);
+    for (let i = 0; i < src.length - 1; i++) {
+      if (x <= src[i + 1]) return dst[i] + ((x - src[i]) / (src[i + 1] - src[i])) * (dst[i + 1] - dst[i]);
+    }
+    return dst[dst.length - 1] + (x - src[src.length - 1]);
+  };
+  window.__duration = tl ? tl.total : 60;
+  window.renderAt = (tEdit) => {
+    const t = tl ? warp(tEdit, tl.new, tl.old) : tEdit;
     const active = SHOTS.filter((s) => t >= s.t0 && t < s.t1);
     if (!active.length) active.push(SHOTS[SHOTS.length - 1]);
     const A = active[0], B = active[1];

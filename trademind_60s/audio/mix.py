@@ -1,5 +1,7 @@
 """Mix narration over music + SFX with ducking; output 48 kHz stereo WAV.
 
+Usage: mix.py [vo.wav] [mix_premaster.wav]  (file names inside output/)
+
 Loudness is finalised with ffmpeg loudnorm in build.sh (-16 LUFS, -1.5 dBTP).
 """
 import os
@@ -32,8 +34,8 @@ def follower(x, att=0.03, rel=0.35):
     return env
 
 
-def main():
-    vo, mus, sfx = load("vo.wav"), load("music.wav"), load("sfx.wav")
+def main(vo_name="vo.wav", out_name="mix_premaster.wav"):
+    vo, mus, sfx = load(vo_name), load("music.wav"), load("sfx.wav")
     n = max(len(vo), len(mus), len(sfx))
     pad = lambda x: np.pad(x, ((0, n - len(x)), (0, 0)))
     vo, mus, sfx = pad(vo), pad(mus), pad(sfx)
@@ -51,9 +53,11 @@ def main():
     pk = np.max(np.abs(mix))
     if pk > 0.97:
         mix *= 0.97 / pk
-    wavfile.write(os.path.join(OUT, "mix_premaster.wav"), SR, mix.astype(np.float32))
+    wavfile.write(os.path.join(OUT, out_name), SR, mix.astype(np.float32))
     print("mix peak", round(float(pk), 3))
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+
+    main(*sys.argv[1:3])

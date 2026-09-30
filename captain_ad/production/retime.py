@@ -22,10 +22,13 @@ def main():
         s.setdefault("dur_design", s["dur"])
         dur = s["dur_design"]
         if "line" in s:
-            s["line"]["offset"] = OFFSET.get(s["id"], 0.15)
+            # prelap (<0): the line starts before its cut; spill: it may run on
+            # over the following non-dialogue shot(s) — standard J/L cuts
+            s["line"]["offset"] = s["line"].get("prelap", OFFSET.get(s["id"], 0.15))
             rec = lines.get(s["id"])
             if rec and not s["line"].get("offscreen"):
-                dur = max(dur, round(s["line"]["offset"] + rec["dur"] + TAIL, 2))
+                need = s["line"]["offset"] + rec["dur"] + TAIL - s["line"].get("spill", 0.0)
+                dur = max(dur, round(need, 2))
         s["t"], s["dur"] = round(t, 3), round(dur, 3)
         t += dur
     d["duration"] = round(t, 3)

@@ -268,15 +268,15 @@ def main():
         x = x * (0.12 / np.sqrt(np.mean(act ** 2)))
         start = s["t"] + s["line"].get("offset", 0.15)
         if s["line"].get("offscreen"):
-            x = lp(hp(x, 400), 2500) * 0.35
+            x = lp(hp(x, 400), 2500) * 0.8
             wet = reverb(np.stack([x, x], 1), 2.8, 0.9)
             place(dlg, wet, start + 0.6)
         else:
             place(dlg, x, start, 0.0)
     for name, x in (("music.wav", mus), ("sfx.wav", sfx), ("dialogue.wav", dlg)):
-        pk = np.abs(x).max()
-        sf.write(os.path.join(OUT, name), (x * (0.95 / pk) if pk > 0.95 else x).astype(np.float32), SR, subtype="FLOAT")
-        print(name, "peak", round(float(pk), 3))
+        # float stems keep their relative balance; the mix normalises loudness
+        sf.write(os.path.join(OUT, name), x.astype(np.float32), SR, subtype="FLOAT")
+        print(name, "peak", round(float(np.abs(x).max()), 3))
 
 
 if __name__ == "__main__":

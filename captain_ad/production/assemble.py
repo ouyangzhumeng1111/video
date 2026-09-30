@@ -104,8 +104,9 @@ def mix(dur):
     for i in range(0, n, 48):  # slow release follower, decimated
         v = max(e[i], v * 0.985)
         a[i:i + 48] = v
-    duck = 10 ** (-6.0 * np.clip(a / 0.05, 0, 1) / 20)
-    x = dlg * 1.0 + sfx * 0.9 + mus * 0.8 * duck[:, None]
+    k = np.clip(a / 0.05, 0, 1)
+    duck_m, duck_s = 10 ** (-9.0 * k / 20), 10 ** (-4.0 * k / 20)  # music and effects step back under dialogue
+    x = dlg * 1.4 + sfx * 0.9 * duck_s[:, None] + mus * 0.8 * duck_m[:, None]
     x *= 0.95 / max(1e-6, np.abs(x).max())
     pre = os.path.join(OUT, "mix_premaster.wav")
     sf.write(pre, x, 48000, subtype="FLOAT")
@@ -117,7 +118,8 @@ def mix(dur):
 def subs(shots, path):
     head = ("[Script Info]\nScriptType: v4.00+\nPlayResX: 1920\nPlayResY: 1080\n\n[V4+ Styles]\n"
             "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding\n"
-            "Style: D,Noto Sans CJK SC Medium,40,&H00F2F2F2,&H000000FF,&H96000000,&H64000000,0,0,0,0,100,100,1,0,1,1.6,1.4,2,80,80,70,1\n\n"
+            "Style: D,Noto Sans CJK SC Medium,40,&H00F2F2F2,&H000000FF,&H96000000,&H64000000,0,0,0,0,100,100,1,0,1,1.6,1.4,2,80,80,70,1\n"
+            "Style: Far,Noto Sans CJK SC Medium,30,&H00C8C8C8,&H000000FF,&H96000000,&H64000000,0,1,0,0,100,100,1,0,1,1.2,1,2,80,80,22,1\n\n"
             "[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n")
     lines = json.load(open(os.path.join(ROOT, "audio", "lines", "lines.json"), encoding="utf-8"))
     ts = lambda t: f"{int(t // 3600)}:{int(t // 60) % 60:02d}:{t % 60:05.2f}"
@@ -127,7 +129,8 @@ def subs(shots, path):
             if "line" in s and s["id"] in lines:
                 a = s["t"] + s["line"].get("offset", 0.15) + (0.6 if s["line"].get("offscreen") else 0)
                 b = a + lines[s["id"]]["dur"] + 0.2
-                fh.write(f"Dialogue: 0,{ts(a)},{ts(b)},D,,0,0,0,,{{\\fad(80,80)}}{s['line']['text']}\n")
+                style = "Far" if s["line"].get("offscreen") else "D"  # distant shout sits below the end-card logo
+                fh.write(f"Dialogue: 0,{ts(a)},{ts(b)},{style},,0,0,0,,{{\\fad(80,80)}}{s['line']['text']}\n")
 
 
 def main():

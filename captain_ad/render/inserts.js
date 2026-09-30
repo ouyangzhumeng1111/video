@@ -184,18 +184,29 @@ function drawLaptop(t) {
 }
 
 function renderUI(t) {
+  document.getElementById('rig').style.display = 'none';
   drawNightBackground(bg.ctx, t);
   drawLaptop(t);
-  const el = document.getElementById('laptop');
+  // laptop composited in 2D: slow push-in, slight tilt and float (cheap at 4K)
   const push = outC(t / 3.0);
-  el.style.transform = `translateZ(${-120 + push * 90}px) rotateX(${7 - push * 2}deg) rotateY(${-7 + push * 3}deg) rotateZ(${0.6 * Math.sin(t * 1.1)}deg)`;
+  const b = bg.ctx;
+  b.save();
+  b.translate(W / 2, H / 2 + 10);
+  b.scale(0.9 + 0.07 * push, 0.9 + 0.07 * push);
+  b.rotate((-1.2 + 0.6 * push + 0.25 * Math.sin(t * 1.1)) * Math.PI / 180);
+  b.transform(1, 0, -0.03 + 0.015 * push, 1, 0, 0);
+  const sh = b.createRadialGradient(0, 40, 300, 0, 40, 1000);  // soft contact shadow, no blur filter
+  sh.addColorStop(0, 'rgba(0,0,0,0.75)'); sh.addColorStop(1, 'rgba(0,0,0,0)');
+  b.fillStyle = sh; b.fillRect(-1100, -700, 2200, 1500);
+  b.drawImage(lap.c, -820, -530, 1640, 1060);
+  b.restore();
   // screen light spill + foreground embers and vignette
   const f = fg.ctx; f.clearRect(0, 0, W, H);
   const on = ss(0.42, 0.62, t);
   const spill = f.createRadialGradient(W / 2, H * 0.55, 100, W / 2, H * 0.55, 1100);
   spill.addColorStop(0, `rgba(90,140,220,${0.10 * on})`); spill.addColorStop(1, 'rgba(0,0,0,0)');
   f.fillStyle = spill; f.fillRect(0, 0, W, H);
-  f.save(); f.filter = 'blur(3px)'; drawEmbers(f, t + 7, 0.55); f.restore();
+  drawEmbers(f, t + 7, 0.45);
   const v = f.createRadialGradient(W / 2, H / 2, H * 0.35, W / 2, H / 2, H * 1.0);
   v.addColorStop(0, 'rgba(0,0,0,0)'); v.addColorStop(1, 'rgba(0,0,0,0.75)');
   f.fillStyle = v; f.fillRect(0, 0, W, H);

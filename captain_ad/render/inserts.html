@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Captain inserts</title>
+<style>
+  @font-face { font-family: Inter; font-weight: 500; src: url(/trademind_60s/render/node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2) format("woff2"); }
+  @font-face { font-family: Inter; font-weight: 600; src: url(/trademind_60s/render/node_modules/@fontsource/inter/files/inter-latin-600-normal.woff2) format("woff2"); }
+  @font-face { font-family: Inter; font-weight: 700; src: url(/trademind_60s/render/node_modules/@fontsource/inter/files/inter-latin-700-normal.woff2) format("woff2"); }
+  html, body { margin: 0; background: #000; overflow: hidden; }
+  #stage { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; background: #000; }
+  canvas { position: absolute; left: 0; top: 0; }
+  #laptop { position: absolute; left: 50%; top: 50%; width: 1640px; height: 1060px; margin: -560px 0 0 -820px; transform-style: preserve-3d; }
+  #rig { position: absolute; inset: 0; perspective: 2600px; perspective-origin: 50% 40%; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="bg" width="1920" height="1080"></canvas>
+  <div id="rig"><canvas id="laptop" width="1640" height="1060"></canvas></div>
+  <canvas id="fg" width="1920" height="1080"></canvas>
+</div>
+<script type="module" src="inserts.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+output/seg_*/
+output/*.wav
+output/still_*.jpg
+footage/
+audio/dialogue_log.txt
+__pycache__/

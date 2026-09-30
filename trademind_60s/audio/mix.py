@@ -16,6 +16,8 @@ SR = 48000
 def load(name):
     sr, x = wavfile.read(os.path.join(OUT, name))
     assert sr == SR, (name, sr)
+    if np.issubdtype(x.dtype, np.integer):  # PCM -> [-1, 1]
+        x = x.astype(np.float32) / float(np.iinfo(x.dtype).max + 1)
     x = x.astype(np.float32)
     if x.ndim == 1:
         x = np.stack([x, x], 1)

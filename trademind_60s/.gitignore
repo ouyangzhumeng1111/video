@@ -3,3 +3,4 @@ output/stills/
 output/*.wav
 output/chunks/
 output/*_log.txt
+__pycache__/

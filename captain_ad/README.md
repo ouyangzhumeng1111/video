@@ -8,6 +8,7 @@
 |---|---|
 | `output/captain_4k.mp4` | **4K 成片**（3840×2160，24 fps，58.75 秒，HEVC/H.265 约 12.4 Mbps，烧录中文字幕，-16 LUFS）|
 | `output/captain_4k_master.mp4` | 4K 母版（H.264 约 75 Mbps、500 多 MB，超过 GitHub 单文件 100 MB 上限，不入库；`assemble.py --res 2160 --subs --out captain_4k_master.mp4` 可重新生成）|
+| `output/captain_1080p.mp4` | 1080p 成片（H.264，27 MB），任何播放器都能放，方便发送 |
 | `output/captain_preview_720p.mp4` | 720p 预览，方便手机上看 |
 | `output/captain_animatic_1080p.mp4` | 早期动态分镜（文字板 + 完整声音），保留作对照 |
 

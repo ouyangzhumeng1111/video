@@ -5,7 +5,7 @@
   3840,
   2160
  ],
- "duration": 55.58,
+ "duration": 58.75,
  "style": "cinematic photorealistic live-action film still, 1700s Caribbean high-seas adventure, shot on ARRI Alexa 65 with anamorphic lenses, shallow depth of field, cold steel-blue ocean light with warm orange fire accents, drifting gunpowder smoke and embers, natural skin texture, subtle film grain, no text, no watermark",
  "characters": {
   "CAPTAIN": "the merchant captain: Chinese man in his mid-40s, short neatly trimmed black beard with a few grey hairs, weathered tanned face, tired intelligent eyes, worn wine-red wool frock coat with tarnished brass buttons over a cream linen shirt, dark trousers, leather boots",
@@ -36,7 +36,7 @@
   {
    "id": "S02",
    "t": 1.8,
-   "dur": 3.29,
+   "dur": 2.94,
    "kind": "ai_lipsync",
    "zh": "过肩中近景：海盗头目贴近船长，身后黑帆遮天，甲板碎木硝烟。",
    "image": "over-the-shoulder medium close-up from behind BOSS: the back of his head and his broad black-leather shoulder fill the left of frame as he leans in close to CAPTAIN, whose tense face is sharp in focus, enormous black sails filling the sky behind, splintered wood and smoke on the deck",
@@ -51,14 +51,14 @@
     "text": "说。你最值钱的东西，藏哪儿了？",
     "emo": "低沉、压迫感十足、带着威胁，压低声音慢慢说",
     "offset": 0.15,
-    "spill": 0.8
+    "spill": 1.1
    },
    "dur_design": 2.4,
    "sync": "away"
   },
   {
    "id": "S03",
-   "t": 5.09,
+   "t": 4.74,
    "dur": 1.1,
    "kind": "ai",
    "zh": "眼部特写：船长没看脚边金币箱，下意识瞥向船舱。",
@@ -71,7 +71,7 @@
   },
   {
    "id": "S04",
-   "t": 6.19,
+   "t": 5.84,
    "dur": 0.8,
    "kind": "ai",
    "zh": "快切：金币箱被拖过甲板。",
@@ -84,7 +84,7 @@
   },
   {
    "id": "S05",
-   "t": 6.99,
+   "t": 6.64,
    "dur": 0.8,
    "kind": "ai",
    "zh": "快切：货箱被吊索吊走。",
@@ -98,7 +98,7 @@
   },
   {
    "id": "S06",
-   "t": 7.79,
+   "t": 7.44,
    "dur": 0.8,
    "kind": "ai",
    "zh": "快切：朗姆酒桶被搬空。",
@@ -111,8 +111,8 @@
   },
   {
    "id": "S07",
-   "t": 8.59,
-   "dur": 2.0,
+   "t": 8.24,
+   "dur": 2.46,
    "kind": "ai_lipsync",
    "zh": "中近景：头目把船长的帽子戴到自己头上，得意地说：“谢谢招待。”",
    "image": "medium close-up of BOSS alone in frame, centred and facing camera, wearing CAPTAIN_HAT he has just taken from the captain, smug half-grin, black sails and smoke behind",
@@ -132,7 +132,7 @@
   },
   {
    "id": "S08",
-   "t": 10.59,
+   "t": 10.7,
    "dur": 1.3,
    "kind": "ai",
    "zh": "特写：火把被随手扔下，火药引线燃起，火星飞快爬向船舱。",
@@ -145,7 +145,7 @@
   },
   {
    "id": "S09",
-   "t": 11.89,
+   "t": 12.0,
    "dur": 2.0,
    "kind": "ai_lipsync",
    "zh": "全景：大副已跳上救生艇，伸手大喊。",
@@ -167,7 +167,7 @@
   },
   {
    "id": "S10",
-   "t": 13.89,
+   "t": 14.0,
    "dur": 1.2,
    "kind": "ai",
    "zh": "中景：船长冲到栏杆边，突然停住。",
@@ -181,7 +181,7 @@
   },
   {
    "id": "S11",
-   "t": 15.09,
+   "t": 15.2,
    "dur": 1.0,
    "kind": "ai",
    "zh": "近景：他猛地转身，冲回浓烟翻滚的船舱。",
@@ -194,7 +194,7 @@
   },
   {
    "id": "S12",
-   "t": 16.09,
+   "t": 16.2,
    "dur": 1.5,
    "kind": "ai",
    "zh": "跟拍：穿过倾倒的桌椅冲进船舱。",
@@ -207,7 +207,7 @@
   },
   {
    "id": "S13",
-   "t": 17.59,
+   "t": 17.7,
    "dur": 1.0,
    "kind": "ai",
    "zh": "特写：撞开柜门、翻开抽屉、在暗格里疯狂摸索。",
@@ -220,7 +220,7 @@
   },
   {
    "id": "S14",
-   "t": 18.59,
+   "t": 18.7,
    "dur": 0.9,
    "kind": "ai",
    "zh": "插入：一袋金币滚到脚边，他一脚踢开。",
@@ -233,8 +233,8 @@
   },
   {
    "id": "S15",
-   "t": 19.49,
-   "dur": 1.58,
+   "t": 19.6,
+   "dur": 2.38,
    "kind": "ai_lipsync",
    "zh": "近景：船长喘着气：“不是这个……在哪儿？！”",
    "image": "close-up of CAPTAIN alone in frame, centred and facing camera, in the smoky cabin, panting, sweat and soot on his face, desperate",
@@ -247,14 +247,14 @@
     "text": "不是这个……在哪儿？！",
     "emo": "急促喘息、焦急崩溃",
     "offset": 0.15,
-    "spill": 1.1
+    "spill": 1.6
    },
    "dur_design": 1.3,
    "sync": "avatar"
   },
   {
    "id": "S16",
-   "t": 21.07,
+   "t": 21.98,
    "dur": 0.6,
    "kind": "ai",
    "zh": "交叉剪辑：越来越短的引线。",
@@ -265,7 +265,7 @@
   },
   {
    "id": "S17",
-   "t": 21.67,
+   "t": 22.58,
    "dur": 0.5,
    "kind": "ai",
    "zh": "交叉剪辑：颤抖的手。",
@@ -278,7 +278,7 @@
   },
   {
    "id": "S18",
-   "t": 22.17,
+   "t": 23.08,
    "dur": 0.5,
    "kind": "ai",
    "zh": "交叉剪辑：大副绝望的脸。",
@@ -291,7 +291,7 @@
   },
   {
    "id": "S19",
-   "t": 22.67,
+   "t": 23.58,
    "dur": 1.2,
    "kind": "ai",
    "zh": "近景：拽出黑色防水包，死死抱在胸前。",
@@ -305,22 +305,23 @@
   },
   {
    "id": "S20",
-   "t": 23.87,
+   "t": 24.78,
    "dur": 1.6,
    "kind": "ai",
-   "zh": "全景慢动作：冲上甲板，踩着断裂船栏纵身跃向救生艇。",
-   "image": "wide shot, CAPTAIN bursts onto the smoking deck holding BAG and leaps from the broken rail toward the lifeboat, slow motion",
-   "motion": "slow-motion leap over the water",
+   "zh": "全景：冲上甲板，一脚踩上断裂的船栏，纵身跳向下方的救生艇。",
+   "image": "wide shot from slightly below on the burning deck: CAPTAIN, BAG clutched to his chest, has one boot planted on the broken rail and is crouched to spring, body leaning out over the water, the small lifeboat visible on the waves below, smoke and fire behind him",
+   "motion": "he pushes off the rail and leaps out over the sea toward the lifeboat below; his body arcs forward and drops fast under gravity out of the bottom of the frame, coat flapping, embers swirling; real-time speed, not slow motion, the camera holds",
    "chars": [
     "CAPTAIN",
     "BAG",
     "MERCHANT_SHIP"
    ],
-   "dur_design": 1.6
+   "dur_design": 1.6,
+   "in": 0.3
   },
   {
    "id": "S21",
-   "t": 25.47,
+   "t": 26.38,
    "dur": 1.2,
    "kind": "ai",
    "zh": "全景：身后船舱轰然爆炸，火光吞没画面。",
@@ -333,7 +334,7 @@
   },
   {
    "id": "S22",
-   "t": 26.67,
+   "t": 27.58,
    "dur": 1.6,
    "kind": "ai",
    "zh": "安静近景：船长跌进小艇，满脸烟灰，怀里的包抱得死紧（耳鸣）。",
@@ -347,8 +348,8 @@
   },
   {
    "id": "S23",
-   "t": 28.27,
-   "dur": 3.16,
+   "t": 29.18,
+   "dur": 4.0,
    "kind": "ai_lipsync",
    "zh": "中近景：大副看着那个包，声音发颤。",
    "image": "medium close-up of MATE alone in frame, centred and facing camera, in the lifeboat looking down at the bag just below frame, soot on his face, shaken",
@@ -362,14 +363,15 @@
     "text": "您差点把命搭上……就为了这个？",
     "emo": "声音发颤、难以置信、后怕",
     "offset": -0.5,
-    "prelap": -0.5
+    "prelap": -0.5,
+    "spill": 0.8
    },
    "dur_design": 2.2,
    "sync": "avatar"
   },
   {
    "id": "S24",
-   "t": 31.43,
+   "t": 33.18,
    "dur": 1.4,
    "kind": "ai",
    "zh": "近景：船长没回答，拉开防水包，取出现代笔记本，掀开屏幕。",
@@ -384,7 +386,7 @@
   },
   {
    "id": "S25",
-   "t": 32.83,
+   "t": 34.58,
    "dur": 1.0,
    "kind": "ai",
    "zh": "近景：停顿一秒，只听见急促呼吸声，屏幕尚未亮起。",
@@ -397,7 +399,7 @@
   },
   {
    "id": "S26",
-   "t": 33.83,
+   "t": 35.58,
    "dur": 1.8,
    "kind": "render_ui",
    "zh": "屏幕插入：TradeMind SDR 亮起，客户资料、商机记录、跟进记录一切都在（后期合成界面）。",
@@ -406,8 +408,8 @@
   },
   {
    "id": "S27",
-   "t": 35.63,
-   "dur": 3.52,
+   "t": 37.38,
+   "dur": 4.08,
    "kind": "ai_lipsync",
    "zh": "全片关键表演：船长闭上眼，肩膀松下来，长长吐出一口气：“还好……账号还在。”",
    "image": "close-up of CAPTAIN alone in frame, centred and facing camera, lit from below by the cool glow of the laptop screen, eyes half closed, the tension leaving his face",
@@ -426,7 +428,7 @@
   },
   {
    "id": "S28",
-   "t": 39.15,
+   "t": 41.46,
    "dur": 1.96,
    "kind": "ai_lipsync",
    "zh": "中景（背身）：大副指着燃烧的船。",
@@ -447,8 +449,8 @@
   },
   {
    "id": "S29",
-   "t": 41.11,
-   "dur": 3.73,
+   "t": 43.42,
+   "dur": 4.25,
    "kind": "ai_lipsync",
    "zh": "中近景：船长抹去脸上的灰，看着屏幕，终于笑了（音乐升起）。",
    "image": "medium close-up of CAPTAIN alone in frame, centred and facing camera, soot smeared on his face, lit by the glow of the laptop just below frame, beginning to smile",
@@ -469,7 +471,7 @@
   },
   {
    "id": "S30",
-   "t": 44.84,
+   "t": 47.67,
    "dur": 1.2,
    "kind": "ai",
    "zh": "全景：小艇漂过海盗船旁，头目站在高处，正好听见。",
@@ -484,8 +486,8 @@
   },
   {
    "id": "S31",
-   "t": 46.04,
-   "dur": 1.26,
+   "t": 48.87,
+   "dur": 1.24,
    "kind": "ai_lipsync",
    "zh": "中景（侧脸，半掩在炮身与硝烟后）：海盗手下转动炮口：“老大，开炮？”",
    "image": "medium shot, GUNNER in profile behind a cannon, half of his face hidden by the barrel and drifting smoke, swinging the cannon toward the lifeboat, linstock burning",
@@ -506,7 +508,7 @@
   },
   {
    "id": "S32",
-   "t": 47.3,
+   "t": 50.11,
    "dur": 1.0,
    "kind": "ai",
    "zh": "近景：头目看看满船抢来的金币，又看看抱着电脑还在笑的船长。",
@@ -520,8 +522,8 @@
   },
   {
    "id": "S33",
-   "t": 48.3,
-   "dur": 2.48,
+   "t": 51.11,
+   "dur": 2.84,
    "kind": "ai_lipsync",
    "zh": "中近景：头目一把按下手下的火把（手伸出画外）：“别开炮！问他——账号怎么开！”",
    "image": "medium close-up of BOSS alone in frame, centred and facing camera, wearing CAPTAIN_HAT, one arm reaching down out of frame pressing a burning linstock away, deadly serious",
@@ -541,7 +543,7 @@
   },
   {
    "id": "S34",
-   "t": 50.78,
+   "t": 53.95,
    "dur": 1.8,
    "kind": "ai",
    "zh": "音乐急停。船长抬头，与头目对视。",
@@ -555,7 +557,7 @@
   },
   {
    "id": "S35",
-   "t": 52.58,
+   "t": 55.75,
    "dur": 3.0,
    "kind": "endcard",
    "zh": "黑底品牌落版：TradeMind SDR · 生意的底气，带得走。远处喊声：“帽子还你！聊聊！”",

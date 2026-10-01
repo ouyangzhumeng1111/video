@@ -1,9 +1,9 @@
 {
- "task": "47dd986f-a99e-4615-8809-b0cdeeec2dea",
+ "task": "f7650d68-409f-43b1-95cc-7083ab9c6cdb",
  "model": "gwm1_avatars",
- "avatar": "9ccf6357-0175-48c3-99e9-ad661eec77fb",
+ "avatar": "8922b25a-8d41-4dea-ab18-84f75b05e048",
  "key": "S29.png",
  "speech_at": 0.5,
- "match": 0.97,
+ "match": 0.949,
  "inpoint": 0.35
 }

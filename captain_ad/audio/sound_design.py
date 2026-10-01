@@ -258,6 +258,7 @@ def main():
     # dialogue: lines at their shots; final shout pushed into the distance
     dlg = np.zeros((N, 2))
     lines_dir = os.path.join(HERE, "lines")
+    meta = json.load(open(os.path.join(lines_dir, "lines.json"), encoding="utf-8"))
     for s in SHOTS["shots"]:
         p = os.path.join(lines_dir, f"{s['id']}.wav")
         if "line" not in s or not os.path.exists(p):
@@ -265,12 +266,13 @@ def main():
         x, sr = sf.read(p, dtype="float32")
         x = resample_poly(x, SR, sr)
         act = x[np.abs(x) > 0.02 * np.abs(x).max()]
-        x = x * (0.12 / np.sqrt(np.mean(act ** 2)))
+        # common reference level, then the line's own: shouts sit forward, the relief line drops back
+        x = x * (0.12 / np.sqrt(np.mean(act ** 2))) * 10 ** (meta.get(s["id"], {}).get("level_db", 0.0) / 20)
         start = s["t"] + s["line"].get("offset", 0.15)
         if s["line"].get("offscreen"):
             x = lp(hp(x, 400), 2500) * 0.8
             wet = reverb(np.stack([x, x], 1), 2.8, 0.9)
-            place(dlg, wet, start + 0.6)
+            place(dlg, wet, start + 0.35)
         else:
             place(dlg, x, start, 0.0)
     for name, x in (("music.wav", mus), ("sfx.wav", sfx), ("dialogue.wav", dlg)):

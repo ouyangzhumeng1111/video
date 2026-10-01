@@ -112,7 +112,13 @@ def mix(dur):
     pre = os.path.join(OUT, "mix_premaster.wav")
     sf.write(pre, x, 48000, subtype="FLOAT")
     final = os.path.join(OUT, "mix_final.wav")
-    sh(["ffmpeg", "-y", "-loglevel", "error", "-i", pre, "-af", "loudnorm=I=-16:TP=-1.5:LRA=14", "-ar", "48000", "-c:a", "pcm_s24le", final])
+    # two-pass loudnorm: measure, then apply the exact linear correction (one pass lands within ~1 LU)
+    meas = subprocess.run(["ffmpeg", "-hide_banner", "-i", pre, "-af", "loudnorm=I=-16:TP=-1.5:LRA=14:print_format=json",
+                           "-f", "null", "-"], capture_output=True, text=True).stderr
+    m = json.loads(meas[meas.rindex("{"):meas.rindex("}") + 1])
+    ln = (f"loudnorm=I=-16:TP=-1.5:LRA=14:measured_I={m['input_i']}:measured_TP={m['input_tp']}:"
+          f"measured_LRA={m['input_lra']}:measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true")
+    sh(["ffmpeg", "-y", "-loglevel", "error", "-i", pre, "-af", ln, "-ar", "48000", "-c:a", "pcm_s24le", final])
     return final
 
 
@@ -128,7 +134,7 @@ def subs(shots, path):
         fh.write(head)
         for s in shots:
             if "line" in s and s["id"] in lines:
-                a = s["t"] + s["line"].get("offset", 0.15) + (0.6 if s["line"].get("offscreen") else 0)
+                a = s["t"] + s["line"].get("offset", 0.15) + (0.35 if s["line"].get("offscreen") else 0)
                 b = a + lines[s["id"]]["dur"] + 0.2
                 style = "Far" if s["line"].get("offscreen") else "D"  # distant shout sits below the end-card logo
                 fh.write(f"Dialogue: 0,{ts(a)},{ts(b)},{style},,0,0,0,,{{\\fad(80,80)}}{s['line']['text']}\n")

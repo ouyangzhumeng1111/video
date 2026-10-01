@@ -1,104 +1,101 @@
 {
-  "S02": {
-    "who": "BOSS",
-    "text": "说。你最值钱的东西，藏哪儿了？",
-    "said": "说。你最值钱的东西，藏哪儿了？",
-    "seed": 1,
-    "dur": 3.686,
-    "cer": 0.0,
-    "asr": "说你最值钱的东西藏哪儿了？",
-    "tempo": 1.25
-  },
-  "S07": {
-    "who": "BOSS",
-    "text": "谢谢招待。",
-    "said": "谢谢招待。",
-    "seed": 7,
-    "dur": 1.08,
-    "cer": 0.0,
-    "asr": "谢谢招待。"
-  },
-  "S09": {
-    "who": "MATE",
-    "text": "船长！快跳！要炸了！",
-    "said": "船长！快跳！要炸了！",
-    "seed": 7,
-    "dur": 2.52,
-    "cer": 0.0,
-    "asr": "船长快跳，要炸了。"
-  },
-  "S15": {
-    "who": "CAPTAIN",
-    "text": "不是这个……在哪儿？！",
-    "said": "不是这个……在哪儿？！",
-    "seed": 1,
-    "dur": 2.28,
-    "cer": 0.222,
-    "asr": "不是这个在哪儿。"
-  },
-  "S23": {
-    "who": "MATE",
-    "text": "您差点把命搭上……就为了这个？",
-    "said": "您差点把命搭上……就为了这个？",
-    "seed": 7,
-    "dur": 3.413,
-    "cer": 0.143,
-    "asr": "您差点把命搭上，就为了这个。",
-    "tempo": 1.2
-  },
-  "S27": {
-    "who": "CAPTAIN",
-    "text": "还好……账号还在。",
-    "said": "还好……账号还在。",
-    "seed": 1,
-    "dur": 2.92,
-    "cer": 0.25,
-    "asr": "还好账号还在。"
-  },
-  "S28": {
-    "who": "MATE",
-    "text": "可咱们什么都没了！",
-    "said": "可咱们什么都没了！",
-    "seed": 1,
-    "dur": 1.56,
-    "cer": 0.0,
-    "asr": "可咱们什么都没了。"
-  },
-  "S29": {
-    "who": "CAPTAIN",
-    "text": "TradeMind SDR还在。客户还能找，生意就能重来。",
-    "said": "TradeMind SDR还在。客户还能找，生意就能重来。",
-    "seed": 23,
-    "dur": 4.131,
-    "cer": 0.0,
-    "asr": "trade mind SDR还在，客户还能找生意就能重来。",
-    "tempo": 1.12
-  },
-  "S31": {
-    "who": "GUNNER",
-    "text": "老大，开炮？",
-    "said": "老大，开炮？",
-    "seed": 1,
-    "dur": 1.36,
-    "cer": 0.0,
-    "asr": "老大开炮。"
-  },
-  "S33": {
-    "who": "BOSS",
-    "text": "别开炮！问他——账号怎么开！",
-    "said": "别开炮！问他——账号怎么开！",
-    "seed": 1,
-    "dur": 2.08,
-    "cer": 0.167,
-    "asr": "别开炮，问他账号怎么开。"
-  },
-  "S35": {
-    "who": "BOSS",
-    "text": "帽子还你！聊聊！",
-    "said": "帽子还你！聊聊！",
-    "seed": 1,
-    "dur": 2.16,
-    "cer": 0.0,
-    "asr": "帽子还你聊聊。"
-  }
+ "S02": {
+  "who": "BOSS",
+  "text": "说。你最值钱的东西，藏哪儿了？",
+  "engine": "seed_audio",
+  "take": "S02_1",
+  "dur": 3.635,
+  "tempo": 1.0,
+  "level_db": -1.0
+ },
+ "S07": {
+  "who": "BOSS",
+  "text": "谢谢招待。",
+  "engine": "seed_audio",
+  "take": "S07_1",
+  "dur": 2.06,
+  "tempo": 1.0,
+  "level_db": -1.0
+ },
+ "S09": {
+  "who": "MATE",
+  "text": "船长！快跳！要炸了！",
+  "engine": "seed_audio",
+  "take": "S09_0",
+  "dur": 2.31,
+  "tempo": 1.0,
+  "level_db": 3.0
+ },
+ "S15": {
+  "who": "CAPTAIN",
+  "text": "不是这个……在哪儿？！",
+  "engine": "seed_audio",
+  "take": "S15_1",
+  "dur": 3.585,
+  "tempo": 1.0,
+  "level_db": 1.0
+ },
+ "S23": {
+  "who": "MATE",
+  "text": "您差点把命搭上……就为了这个？",
+  "engine": "seed_audio",
+  "take": "S23_0",
+  "dur": 5.055,
+  "tempo": 1.0,
+  "level_db": -1.5
+ },
+ "S27": {
+  "who": "CAPTAIN",
+  "text": "还好……账号还在。",
+  "engine": "seed_audio",
+  "take": "S27_0",
+  "dur": 3.485,
+  "tempo": 1.0,
+  "level_db": -4.0
+ },
+ "S28": {
+  "who": "MATE",
+  "text": "可咱们什么都没了！",
+  "engine": "seed_audio",
+  "take": "S28_0",
+  "dur": 1.56,
+  "tempo": 1.103,
+  "level_db": 2.5
+ },
+ "S29": {
+  "who": "CAPTAIN",
+  "text": "TradeMind SDR还在。客户还能找，生意就能重来。",
+  "engine": "seed_audio",
+  "take": "S29_1",
+  "dur": 4.65,
+  "tempo": 1.0,
+  "level_db": 0.0
+ },
+ "S31": {
+  "who": "GUNNER",
+  "text": "老大，开炮？",
+  "engine": "seed_audio",
+  "take": "S31_1",
+  "dur": 1.345,
+  "tempo": 1.0,
+  "level_db": 2.5
+ },
+ "S33": {
+  "who": "BOSS",
+  "text": "别开炮！问他——账号怎么开！",
+  "engine": "seed_audio",
+  "take": "S33_1",
+  "dur": 2.445,
+  "tempo": 1.0,
+  "level_db": 3.0
+ },
+ "S35": {
+  "who": "BOSS",
+  "text": "帽子还你！聊聊！",
+  "engine": "seed_audio",
+  "take": "S35_0",
+  "dur": 2.45,
+  "tempo": 1.129,
+  "level_db": 0.0
+ }
 }

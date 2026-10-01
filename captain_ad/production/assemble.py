@@ -77,7 +77,9 @@ def segment(s, w, h, fps, crf, tmp, proxy=False):
     if kind in ("video", "ai"):
         vf = f"scale={w}:{h}:flags=lanczos:force_original_aspect_ratio=increase,crop={w}:{h},fps={fps}"
         vf += ("," + GRADE if kind == "ai" else "") + "," + grain
-        sh(["ffmpeg", "-y", "-loglevel", "error", "-ss", str(s.get("in", 0)), "-t", dur, "-i", src, "-vf", vf, "-t", dur] + enc)
+        # footage/4k clips were cut at the in-point by upscale.py; only raw clips still carry the head
+        start = 0 if os.path.dirname(src) == os.path.join(FOOT, "4k") else s.get("in", 0)
+        sh(["ffmpeg", "-y", "-loglevel", "error", "-ss", str(start), "-t", dur, "-i", src, "-vf", vf, "-t", dur] + enc)
     elif kind == "key":
         n = int(round(s["dur"] * fps))
         vf = f"scale={w * 2}:{h * 2}:flags=lanczos,zoompan=z='1+0.06*on/{n}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={n}:s={w}x{h}:fps={fps},{GRADE},{grain}"

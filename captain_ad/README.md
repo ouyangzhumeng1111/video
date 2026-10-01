@@ -6,7 +6,8 @@
 
 | 文件 | 说明 |
 |---|---|
-| `output/captain_4k.mp4` | **4K 成片**（3840×2160，24 fps，烧录中文字幕，-16 LUFS） |
+| `output/captain_4k.mp4` | **4K 成片**（3840×2160，24 fps，HEVC/H.265 约 13 Mbps，烧录中文字幕，-16 LUFS）|
+| `output/captain_4k_master.mp4` | 4K 母版（H.264 约 75 Mbps、520 MB，超过 GitHub 单文件 100 MB 上限，不入库；`assemble.py --res 2160 --subs --out captain_4k_master.mp4` 可重新生成）|
 | `output/captain_preview_720p.mp4` | 720p 预览，方便手机上看 |
 | `output/captain_animatic_1080p.mp4` | 早期动态分镜（文字板 + 完整声音），保留作对照 |
 
@@ -54,7 +55,8 @@ python3 generate_runway.py talk S27                # 对口型镜头
 python3 ../audio/sound_design.py                   # 配乐、音效、台词摆位（output/*.wav）
 python3 assemble.py --res 1080 --proxy --subs --out captain_review_1080p.mp4   # 快速审片
 python3 ../render/upscale.py S12                   # 本地放大到 4K（约 3 秒一帧）
-python3 assemble.py --res 2160 --subs --out captain_4k.mp4                    # 4K 成片
+python3 assemble.py --res 2160 --subs --out captain_4k_master.mp4             # 4K 母版
+# 入库用的 4K：HEVC 两遍编码到 ~92 MB（ffmpeg -c:v libx265 -b:v 12800k -tag:v hvc1，pass=1 / pass=2）
 ```
 
 需要环境变量 `RUNWAYML_API_SECRET`（在云环境设置里加，不要发在聊天里）。每一步都有缓存：删掉某个镜头的文件就只重做那一个。每次生成的任务号、模型、种子、提示词记在 `footage/raw/*.json` 和 `footage/keys/*.json`，运行日志在 `output/runway_log.txt`。

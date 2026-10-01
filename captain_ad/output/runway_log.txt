@@ -1,0 +1,293 @@
+  ref CAPTAIN_0: task 117c7590-b377-4dca-8f6e-880e7b7e3b3c
+  ref CAPTAIN_1: task e7c21453-346a-4376-bd4f-192fd7c45eca
+  ref CAPTAIN_1: done in 27s (8 credits)
+  ref BOSS_0: task 0392c8bb-870d-43b2-ad48-f7a899ab3d70
+  ref CAPTAIN_0: done in 36s (8 credits)
+  ref BOSS_1: task 256d7aee-f3f2-437f-b66a-6f99e2d72eec
+  ref BOSS_0: done in 29s (8 credits)
+  ref MATE_0: task d0557151-0284-485f-89e1-71c56fbfa8a5
+  ref BOSS_1: done in 29s (8 credits)
+  ref MATE_1: task 5ba8c819-d8f1-4197-b194-c134ebf71b5f
+  ref MATE_0: done in 29s (8 credits)
+  ref MATE_1: done in 22s (8 credits)
+  ref GUNNER_0: task dacd2226-0cc7-4e0a-ab70-4f8709a1e6a4
+  ref GUNNER_1: task 215e544a-ea65-456c-a7ed-4c6dc51d71f6
+  ref GUNNER_0: done in 27s (8 credits)
+  ref PROPS_0: task 8feb2170-9944-4a80-83d6-2f6cbea33458
+  ref GUNNER_1: done in 49s (8 credits)
+  ref PROPS_1: task eb0729b1-7a15-4bf8-9651-c2a18ebb0f11
+  ref PROPS_0: done in 29s (8 credits)
+  ref PROPS_1: done in 27s (8 credits)
+  ref CAPTAIN_0: task af0b6985-b2bf-4917-8e25-4937f37dde01
+  ref CAPTAIN_1: task 65151e7f-8dcc-43f8-ade8-8d5276d1c597
+  ref CAPTAIN_0: done in 27s (8 credits)
+  ref CAPTAIN_1: done in 28s (8 credits)
+balance 904 credits, this step about 4
+  key S27_0: task 5f988e53-36e9-4a4c-b38b-782faac2680a
+  key S27_1: task ed1e43a2-77f6-49cc-9491-c7f1e7697591
+  key S27_0: done in 7s (2 credits)
+  key S27_1: done in 14s (2 credits)
+balance 900 credits, this step about 4
+  talk S27: task caa991d9-c2bd-4c4e-919d-b6a36d907684
+  talk S27: done in 135s (2 credits)
+    S27: line at 0.50s (match 0.95), in-point 0.15s
+balance 898 credits, this step about 134
+  key S01_0: task 18decc06-d2c6-40c7-8f6a-d13189409b01
+  key S01_1: task b98cb0d5-e07f-40b3-90fd-7b76676bedd9
+  key S01_0: done in 8s (2 credits)
+  key S02_0: task 5b56bed0-2432-4f49-8511-b5ee6548c583
+  key S01_1: done in 16s (2 credits)
+  key S02_1: task b710e8d8-43c0-416e-ba18-ade41ed1c008
+  key S02_0: done in 16s (2 credits)
+  key S02_1: done in 8s (2 credits)
+  key S03_0: task ded3cb13-7c27-4e08-9f4c-030f80a3ad23
+  key S03_1: task b1e23cbc-4d7b-4d59-a815-36f065107ef0
+  key S03_0: done in 8s (2 credits)
+  key S03_1: done in 8s (2 credits)
+  key S07_0: task 27a6e78d-598c-4666-92ca-ad435b3ae058
+  key S07_1: task 00ba3119-7644-4078-96a0-3348c8a44fcb
+  key S07_0: done in 7s (2 credits)
+  key S07_1: done in 8s (2 credits)
+  key S09_0: task 44ba808e-823e-4c4b-b397-5b3fb1bf6a85
+  key S09_1: task 1d854753-219c-44f8-b8d0-badb4368ff86
+  key S09_0: done in 14s (2 credits)
+  key S09_1: done in 15s (2 credits)
+  key S10_0: task e05df971-5ccc-488f-9f85-1196f60e90d1
+  key S10_1: task dc6fd218-64c8-4745-ae6c-cf2bf7dbac9f
+  key S10_0: done in 7s (2 credits)
+  key S10_1: done in 8s (2 credits)
+  key S11_0: task b639a567-e1ca-482a-8732-d4254b2af8fb
+  key S11_1: task b8328291-5de4-488d-aa03-8442f7a08a1e
+  key S11_0: done in 7s (2 credits)
+  key S11_1: done in 8s (2 credits)
+  key S12_0: task 506b99c3-8139-428e-898c-c91d52bd4246
+  key S12_1: task 65d59e4b-4ad4-4bd5-8bf3-f2e45cd180b5
+  key S12_0: done in 7s (2 credits)
+  key S12_1: done in 8s (2 credits)
+  key S13_0: task 5c2d785e-cb87-471e-bdef-a270bb719bf4
+  key S13_1: task a8809a1a-8f73-474c-9dd7-c5cac3c2c1ea
+  key S13_0: done in 7s (2 credits)
+  key S13_1: done in 8s (2 credits)
+  key S14_0: task 6c7b4347-b890-4b7e-9d60-11544c729236
+  key S14_1: task 216ab2dd-31ed-4df4-9c0c-448556c5804b
+  key S14_0: done in 7s (2 credits)
+  key S14_1: done in 8s (2 credits)
+  key S15_0: task 01b0a7aa-4922-44c2-857c-8f5d7bab178c
+  key S15_1: task af5f0247-f700-4225-89ca-7ec962565c2c
+  key S15_0: done in 7s (2 credits)
+  key S15_1: done in 8s (2 credits)
+  key S17_0: task 0fff2420-9551-4bd7-a2bf-b31284afb48a
+  key S17_1: task 93d0908a-f9db-42fc-a541-de0b4a75dd50
+  key S17_0: done in 7s (2 credits)
+  key S17_1: done in 8s (2 credits)
+  key S18_0: task 6648e853-874b-4eb7-8c4d-8cd0c3b738ec
+  key S18_1: task dff4684f-fd29-45d5-8dfe-533342d91b27
+  key S18_0: done in 7s (2 credits)
+  key S18_1: done in 8s (2 credits)
+  key S19_0: task 282584b8-73ca-4f2b-8f86-2f09f1b0904b
+  key S19_1: task 069c82a7-5843-47f3-ae76-949c15aed53c
+  key S19_0: done in 14s (2 credits)
+  key S19_1: done in 15s (2 credits)
+  key S20_0: task c8373e51-d300-4aab-82bf-9ed20562fa0c
+  key S20_1: task 73c31047-531e-4bd5-b214-3a185715cfb0
+  key S20_0: done in 7s (2 credits)
+  key S20_1: done in 8s (2 credits)
+  key S22_0: task 6e0b065b-7a43-41f8-aad0-c69751b58558
+  key S22_1: task bce8d2c5-e8e6-4719-a237-eeffc0c12a93
+  key S22_0: done in 7s (2 credits)
+  key S22_1: done in 8s (2 credits)
+  key S23_0: task e7960033-72c9-4639-b708-3ef8d25fc900
+  key S23_1: task 8399b081-4799-47c8-8786-705855112351
+  key S23_0: done in 7s (2 credits)
+  key S23_1: done in 8s (2 credits)
+  key S24_0: task 88e4682a-e7b4-4b3f-a2ea-bc0e05812c6f
+  key S24_1: task ba2865cd-5d71-4a33-a641-edc911e18707
+  key S24_0: done in 7s (2 credits)
+  key S24_1: done in 8s (2 credits)
+  key S25_0: task cc5b7ebc-54c5-438f-aff0-bb8c4fab0b36
+  key S25_1: task 5c91bc75-d17f-4f3f-bd56-0dfd5aab50e0
+  key S25_1: done in 7s (2 credits)
+  key S28_0: task 9279936e-da9c-448c-8e43-6897f40bdcf2
+  key S25_0: done in 16s (2 credits)
+  key S28_0: done in 8s (2 credits)
+  key S28_1: task 841b696c-c7d1-498f-bd80-75d648bcc672
+  key S29_0: task a62edcbd-badd-482b-afa7-6e7bba439f60
+  key S28_1: done in 14s (2 credits)
+  key S29_0: done in 14s (2 credits)
+  key S29_1: task 646d9abb-63d0-45e8-84b0-4ebb46a563ad
+  key S30_0: task 3f8cd1a9-48ea-4306-9ac3-69c6423fdf0d
+  key S29_1: done in 7s (2 credits)
+  key S30_0: done in 8s (2 credits)
+  key S30_1: task 032cd44d-b2d4-4ad9-882a-9695a9102562
+  key S31_0: task a4803abb-8522-45b5-9f4b-f108d0164de7
+  key S30_1: done in 7s (2 credits)
+  key S31_0: done in 8s (2 credits)
+  key S31_1: task daed7911-6f58-4d43-86ae-1dbb0f803e12
+  key S32_0: task 3c2867a1-f158-4d71-acc5-a1a87b11b8f0
+  key S31_1: done in 7s (2 credits)
+  key S32_0: done in 8s (2 credits)
+  key S32_1: task 2db6f4c6-6ea8-4ce0-80d1-14b7c6562f14
+  key S33_0: task eb9ecbb3-7a77-468c-be3c-b9e82d7e2183
+  key S32_1: done in 7s (2 credits)
+  key S33_0: done in 8s (2 credits)
+  key S33_1: task 703f7085-f46f-4f5d-bc03-e454801940e2
+  key S34_0: task 1f27423c-6e16-442a-88da-788f77fef57e
+  key S33_1: done in 8s (2 credits)
+  key S34_1: task 26eb9f77-d3df-402a-98c8-a8785154b446
+  key S34_0: done in 15s (2 credits)
+  key S34_1: done in 8s (2 credits)
+  key S04_0: task d9578034-f63e-422e-91ef-f4bddaecec10
+  key S05_0: task bd17fe93-a873-438c-8c55-5dcc2c71d439
+  key S04_0: done in 20s (5 credits)
+  key S05_0: done in 21s (5 credits)
+  key S06_0: task 4ee3ad37-cfa4-486e-9284-962020c84b8c
+  key S08_0: task 36700905-c8fc-43a2-97f4-d4602031b16a
+  key S06_0: done in 27s (5 credits)
+  key S08_0: done in 28s (5 credits)
+  key S16_0: task 2b49d148-02f6-43fc-bd5c-6adac90131f9
+  key S21_0: task 68c1a2fb-f1e7-4bb9-a01a-321ff34d4cdc
+  key S16_0: done in 27s (5 credits)
+  key S21_0: done in 28s (5 credits)
+balance 764 credits, this step about 16
+  ref CAPTAIN_NOHAT_0: task c84c2148-5be8-4272-be2c-1cb28adc549f
+  ref CAPTAIN_NOHAT_1: task 1c67cd82-3a2f-4a97-8d21-8e68d01ea6bd
+  ref CAPTAIN_NOHAT_0: done in 7s (2 credits)
+  ref CAPTAIN_NOHAT_1: done in 8s (2 credits)
+balance 760 credits, this step about 56
+  key S10_0: task 99a58f2e-412e-43c6-b4c0-4c69e9d92560
+  key S10_1: task 1b8c30ca-ad17-443e-accb-4420a3f63011
+  key S10_0: done in 7s (2 credits)
+  key S11_0: task acf5d199-8185-40de-b8d2-23c781ec1f2a
+  key S10_1: done in 15s (2 credits)
+  key S11_0: done in 8s (2 credits)
+  key S11_1: task 8ef67c48-dc99-4fd8-ad15-b60b97e28f89
+  key S12_0: task c486cad1-c153-4a3f-becb-1cc7a2afb9d0
+  key S11_1: done in 7s (2 credits)
+  key S12_0: done in 8s (2 credits)
+  key S12_1: task bcba6515-8496-44da-9c68-9b84e235c464
+  key S13_0: task 8354359b-ade7-4fe8-b54e-8ff8376315b9
+  key S12_1: done in 7s (2 credits)
+  key S13_0: done in 8s (2 credits)
+  key S13_1: task b7062106-91e8-4820-af6d-34fe024520ed
+  key S14_0: task 2d0f923a-995c-4b69-9c5b-e44fd1a9db63
+  key S13_1: done in 7s (2 credits)
+  key S14_0: done in 8s (2 credits)
+  key S14_1: task 3ea6bf09-f674-43f7-b1e3-90a3aa62dbd6
+  key S15_0: task 0a796583-c3cd-455a-bbf2-c287f2ece142
+  key S14_1: done in 14s (2 credits)
+  key S15_0: done in 15s (2 credits)
+  key S15_1: task a08e88dd-8faa-444f-9698-c53179be838e
+  key S19_0: task e94752e4-e0f6-40b6-97e4-eb6aa60d1c36
+  key S15_1: done in 7s (2 credits)
+  key S19_0: done in 8s (2 credits)
+  key S19_1: task ca750eab-1b4d-4ee5-b553-52495df60175
+  key S20_0: task 9d5515be-129a-4fa6-8aff-b6470c6e7749
+  key S19_1: done in 7s (2 credits)
+  key S20_0: done in 9s (2 credits)
+  key S20_1: task 6866969c-efb4-49e2-8349-f2cd8e8caec9
+  key S22_0: task 36c5b268-302c-4eb7-9964-2c2fc8b5f9a1
+  key S20_1: done in 8s (2 credits)
+  key S22_0: done in 8s (2 credits)
+  key S22_1: task 584b3f2a-4c05-4627-b690-5adbf1b7c8c3
+  key S24_0: task 8b15382e-bcad-4932-9961-564ae53ce4f6
+  key S22_1: done in 14s (2 credits)
+  key S24_0: done in 15s (2 credits)
+  key S24_1: task 0990a80b-fd6c-4d08-b398-6f8a3c835a4e
+  key S25_0: task 5ba142a1-55e7-4928-83a2-e798c0fa40d3
+  key S24_1: done in 7s (2 credits)
+  key S25_1: task a101fe30-4ea4-430f-99bb-7eaf46983049
+  key S25_0: done in 15s (2 credits)
+  key S27_0: task f16efe28-bf91-4480-b393-1657f2aea471
+  key S25_1: done in 15s (2 credits)
+  key S27_1: task 83922c9c-3e41-4a5d-b09c-a6e1b9566370
+  key S27_0: FAILED INTERNAL.BAD_OUTPUT.CODE01 An unexpected error occurred.
+  key S27_1: done in 7s (2 credits)
+  key S29_0: task 766a1f2f-0855-4589-81dd-899fa93d6fc6
+  key S29_1: task 4e3248fe-deea-4cc8-b0a4-78c06b7d7608
+  key S29_0: done in 7s (2 credits)
+  key S29_1: done in 8s (2 credits)
+  key S34_0: task 744e52e6-5893-436d-a22c-2563cdfe7a44
+  key S34_1: task d01b6535-bba8-4486-baab-c7d467cbf089
+  key S34_0: done in 7s (2 credits)
+  key S34_1: FAILED INTERNAL.BAD_OUTPUT.CODE01 An unexpected error occurred.
+failed: key S27_0 key S34_1 (moderation failures are billed; reword before retrying)
+balance 706 credits, this step about 25
+  video S01_0: task aa3118b1-5ab4-4061-ad7c-1abfbb6790be
+  video S01_0: done in 19s (15 credits)
+  video S21_0: task 077c18e2-594f-4fc4-959d-643955287591
+  video S21_0: done in 19s (10 credits)
+balance 681 credits, this step about 275
+  video S02_0: task e11a56da-5eb1-43fe-aa81-38e5309de6bd
+  video S02_0: done in 19s (20 credits)
+  video S03_0: task 3912fe03-732b-43b1-adc4-6a49603f708c
+  video S03_0: done in 19s (10 credits)
+  video S04_0: task 863f5ed9-9e86-457c-8c30-47f43da35c18
+  video S04_0: done in 19s (10 credits)
+  video S05_0: task be42ea6a-a125-4a7c-a8ec-7e147a09aaf6
+  video S05_0: done in 19s (10 credits)
+  video S06_0: task bfa650e1-4e22-471b-b809-31a833079178
+  video S06_0: done in 19s (10 credits)
+  video S08_0: task 169fbfe6-2dd9-4a6d-88b1-543b3e84c186
+  video S08_0: done in 13s (10 credits)
+  video S09_0: task 165128c0-2f88-40d3-993c-773d69a6f901
+  video S09_0: done in 19s (15 credits)
+  video S10_0: task cb0aab4f-87d6-4b92-9969-a03985eb3e30
+  video S10_0: done in 19s (10 credits)
+  video S11_0: task 2f75c588-6f72-48a0-a32c-b934651e3a2d
+  video S11_0: done in 26s (10 credits)
+  video S12_0: task 74a7e217-4198-43d2-8a35-fe191bfa8156
+  video S12_0: done in 26s (10 credits)
+  video S13_0: task 31cd08c8-5e1a-4f9e-9d0c-b1599d7eb3ca
+  video S13_0: done in 13s (10 credits)
+  video S14_0: task 041f2876-a861-412b-b6fa-2d59310efb86
+  video S14_0: done in 19s (10 credits)
+  video S16_0: task ff03a7ab-094d-4ff6-8d48-e18fe3edb337
+  video S16_0: done in 19s (10 credits)
+  video S17_0: task 72f9540f-4081-4434-9b9c-b2342cfcf620
+  video S17_0: done in 19s (10 credits)
+  video S18_0: task 27373300-dd4a-4f41-9c8e-d4b47ba39a48
+  video S18_0: done in 19s (10 credits)
+  video S19_0: task a8799bd3-eb11-4fb7-9d2a-2ca626c3a13e
+  video S19_0: done in 19s (10 credits)
+  video S20_0: task 5105a547-57cd-44f6-993d-13be0a6b8884
+  video S20_0: done in 19s (10 credits)
+  video S22_0: task a45011cc-48f3-416d-836a-06673f8ab848
+  video S22_0: done in 25s (10 credits)
+  video S24_0: task 0e04bc18-4cb9-48b3-9178-a28a80887152
+  video S24_0: done in 19s (10 credits)
+  video S25_0: task cfc0bbfa-1ede-4711-94a1-7342ae9a22b5
+  video S25_0: done in 19s (10 credits)
+  video S28_0: task 6735ce2d-9b08-4d2d-9816-cfe3e729c6e2
+  video S28_0: done in 19s (15 credits)
+  video S30_0: task 83415ccf-a0bb-4896-af9b-c6e648a4ae1c
+  video S30_0: done in 19s (10 credits)
+  video S31_0: task cf9d271d-be94-4dbd-9de4-83ad9f232920
+  video S31_0: done in 19s (10 credits)
+  video S32_0: task f61521d6-eb01-40c3-8e5f-878a2455fba9
+  video S32_0: done in 26s (10 credits)
+  video S34_0: task 98927980-b0f5-4b3c-9e6e-75a3bef5fdf0
+  video S34_0: done in 19s (15 credits)
+balance 406 credits, this step about 24
+  talk S07: task 1368b35f-d2c2-4af9-8a84-74c0e314c464
+  talk S07: done in 13s (2 credits)
+    S07: line at 0.65s (match 0.57), in-point 0.50s
+  talk S15: task ac27685d-ca6a-4cb7-bbe5-a099fa1b67e7
+  talk S15: done in 13s (2 credits)
+    S15: line at 0.50s (match 0.96), in-point 0.35s
+  talk S23: task 02ae824e-165e-4181-9050-37983de6635d
+  talk S23: done in 13s (2 credits)
+    S23: line at 0.50s (match 0.90), in-point 1.00s
+  talk S27: task 8489706e-2723-459a-aaae-51926ccb0601
+  talk S27: done in 13s (2 credits)
+    S27: line at 0.50s (match 0.95), in-point 0.15s
+  talk S29: task 47dd986f-a99e-4615-8809-b0cdeeec2dea
+  talk S29: done in 13s (2 credits)
+    S29: line at 0.50s (match 0.97), in-point 0.35s
+  talk S33: task 3c49d79a-0455-486d-a358-eb203f7cc0e4
+  talk S33: done in 13s (2 credits)
+    S33: line at 0.50s (match 0.80), in-point 0.35s
+balance 394 credits, this step about 48
+  video S10_0: task 32c718ab-da9f-4821-8992-b0924dcf6da7
+  video S10_0: done in 64s (24 credits)
+  video S24_0: task 27a9d92b-4ac0-4590-9fc3-500de1700997
+  video S24_0: done in 51s (24 credits)

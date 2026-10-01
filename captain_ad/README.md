@@ -1,61 +1,80 @@
 # 《船长的底牌》TradeMind SDR · 电影感反转广告（约 55 秒，4K）
 
-加勒比海冒险风格的真人写实广告：海盗劫船，船长冒死冲回火药舱，抢出来的不是金币，而是装着 TradeMind SDR 的笔记本；海盗头目最后不开炮，只想问账号怎么开。
+加勒比海冒险风格的真人写实广告：海盗劫船，中国船长冒死冲回火药舱，抢出来的不是金币，而是装着 TradeMind SDR 的笔记本；海盗头目最后不开炮，只想问账号怎么开。
 
-## 当前进度
+## 成片
 
-| 部分 | 状态 |
+| 文件 | 说明 |
 |---|---|
-| 分镜与生成提示词（35 个镜头，人物/道具设定统一） | ✅ `production/shots.json`、`production/SHOTLIST.md` |
-| 角色台词配音（船长、海盗头目、大副、海盗手下，按剧本语气演绎） | ✅ `audio/lines/`（CosyVoice3，Apache-2.0） |
-| 配乐与音效（紧张开场 → 抢劫快切 → 引线 → 奔跑 → 爆炸耳鸣 → 松气 → 希望主题 → 炮口 → 音乐急停 → 品牌） | ✅ `audio/sound_design.py` |
-| 4K 笔记本屏幕镜头（TradeMind SDR 亮起，客户/商机/跟进都在） | ✅ `output/insert_ui_4k.mp4` |
-| 4K 黑底品牌落版（TradeMind SDR · 生意的底气，带得走。+ logo） | ✅ `output/insert_end_4k.mp4` |
-| 动态分镜（全部镜头卡好时间 + 完整声音，用于审节奏） | ✅ `output/captain_animatic_1080p.mp4` |
-| 剪辑时间线按台词长度调整（J/L 剪辑，台词可跨到下一个反应镜头），全片约 55.6 秒 | ✅ `production/retime.py` |
-| **AI 真人镜头（31 个）** | ⏳ 需要视频生成服务的 API Key |
-| 4K 成片 | ⏳ 镜头到位后由 `assemble.py` 自动合成 |
+| `output/captain_4k.mp4` | **4K 成片**（3840×2160，24 fps，烧录中文字幕，-16 LUFS） |
+| `output/captain_preview_720p.mp4` | 720p 预览，方便手机上看 |
+| `output/captain_animatic_1080p.mp4` | 早期动态分镜（文字板 + 完整声音），保留作对照 |
 
-## 需要您配置（一次）——用 Runway 生成真人镜头
+## 分工：Runway 做画面，其余本地完成
 
-1. 在对话里出现的插件卡片上启用 **Runway API Skills**（Runway 官方插件）。
-2. 在会话标题栏的云环境菜单 → 编辑 → 环境变量，添加 **`RUNWAYML_API_SECRET`**，值为 Runway 开发者后台（dev.runwayml.com）生成的 API Key。不要把 Key 发在聊天里。
-3. 网络允许域名：`runwayml.com`（含子域名，API 在 `api.dev.runwayml.com`）；生成结果的下载链接在 Runway 的 CDN 上，第一次下载如果被拦，我会告诉您要加的具体域名。
-4. 新开一个会话（插件和环境变量在新会话生效），说「继续船长的底牌，用 Runway」。
+| 部分 | 怎么做的 |
+|---|---|
+| 人物定妆（船长、头目、大副、海盗手下、防水包+笔记本） | Runway Gen-4 Image；船长丢帽后的造型用 Gen-4 Image Turbo 以原定妆图为参考生成，保证同一张脸 |
+| 33 个镜头的关键帧 | Runway Gen-4 Image Turbo，带 `@Captain / @Boss / @Mate / @Gunner / @Props` 参考图保持长相服装一致；无人物的空镜用 Gen-4 Image |
+| 27 个动作镜头 | Runway Gen-4 Turbo 图生视频；S10、S24 首版有穿帮（多出一个人、笔记本裂开），改用 Gen-4.5 重做 |
+| 6 个对口型台词镜头（S07、S15、S23、S27、S29、S33） | Runway Characters：关键帧建成角色，用已录好的台词音频驱动口型，再按剪辑时间线裁切 |
+| 其余台词镜头 | 改成不露嘴型的拍法：S02 过肩从头目背后拍、S28 大副背身、S31 手下侧脸半掩在炮身后、S09 远景 |
+| 台词配音、配乐音效、屏幕界面与品牌落版、剪辑合成 | 本地（CosyVoice3、程序化声音、HTML 渲染、ffmpeg） |
+| 放大到 4K | 本地 Real-ESRGAN（general-x4v3，BSD-3）在 CPU 上逐帧放大，混入 35% 普通插值避免皮肤发蜡 |
 
-用 Runway 的分工：Gen-4 Image 带人物参考图生成每个镜头的关键帧（Characters / References 保持船长、头目、大副长相服装一致）→ 图生视频 → Runway 放大到 4K。台词仍用已录好的配音；说话镜头用对口型处理，没有对口型能力时改用侧脸、背身或画外音拍法。
+## Runway 积分（预算 1000）
 
-也可以不用 Runway，改用 fal.ai（`FAL_KEY`，允许 `fal.run`、`fal.ai`、`fal.media`），流程见下文 `generate_fal.py`。
+| 步骤 | 积分 |
+|---|---|
+| 定妆图（含船长重做、无帽版） | 100 |
+| 关键帧（每镜 2 张候选；丢帽后的 14 个镜头重做） | 190 |
+| 动作镜头（Gen-4 Turbo 27 个 + Gen-4.5 重做 2 个） | 348 |
+| 对口型（Characters，每镜 2 积分） | 14 |
+| 两次生成失败（Runway 内部错误）| 2 |
+| **合计** | **654，余 346** |
 
-## 生成流程（fal.ai 版本；Runway 版本会在新会话里按插件文档写成 generate_runway.py，步骤相同）
+原方案（Gen-4.5 全部动作 + Seedance 对口型 + Magnific 4K）估算约 5150 积分，超出预算，所以改为上面的组合。余下的积分可以用来重做不满意的镜头（Gen-4 Turbo 每秒 5 积分，Gen-4.5 每秒 12 积分）。
+
+## 剧情与人物
+
+- 船长、大副（船员）都是中国人；海盗头目为魁梧的欧洲面孔，海盗手下戴红头巾。人物设定在 `production/shots.json` 的 `characters`。
+- 帽子是伏笔：S07 头目摘走船长的帽子戴上，此后船长一直不戴帽子，结尾头目喊“帽子还你！聊聊！”。
+- 笔记本在 S24 之前一直装在防水包里；笔记本外壳没有任何品牌标志（定妆图上的苹果标志已手工去掉）。
+
+## 重新生成 / 修改某个镜头
 
 ```bash
-pip install fal-client
+pip install numpy soundfile pillow requests scipy
+pip install torch --index-url https://download.pytorch.org/whl/cpu      # 4K 放大用
 cd captain_ad/production
-python3 generate_fal.py refs          # 人物定妆图，每人 2 张候选 → 挑最好的存为 footage/refs/<NAME>.png
-python3 generate_fal.py keys          # 每个镜头的关键帧（带人物参考图，保证长相服装一致）
-python3 generate_fal.py video         # 图生视频
-python3 generate_fal.py lipsync       # 11 句台词对口型
-python3 generate_fal.py upscale       # 放大到 4K
-python3 assemble.py --res 2160 --out captain_4k.mp4 --subs
+python3 generate_runway.py budget                  # 估算积分
+python3 generate_runway.py keys S12                # 关键帧（已选定的 footage/keys/S12.png 存在时跳过，删掉即重做）
+python3 generate_runway.py video S12               # Gen-4 Turbo；加 --model gen4.5 用更好的模型
+python3 generate_runway.py talk S27                # 对口型镜头
+python3 ../audio/sound_design.py                   # 配乐、音效、台词摆位（output/*.wav）
+python3 assemble.py --res 1080 --proxy --subs --out captain_review_1080p.mp4   # 快速审片
+python3 ../render/upscale.py S12                   # 本地放大到 4K（约 3 秒一帧）
+python3 assemble.py --res 2160 --subs --out captain_4k.mp4                    # 4K 成片
 ```
 
-每一步都有缓存，删掉某个镜头的文件就只重做那一个。关键帧和成片我会逐个看过再往下走，重点镜头 S27（船长松气）会多生成几版挑最好的。
+需要环境变量 `RUNWAYML_API_SECRET`（在云环境设置里加，不要发在聊天里）。每一步都有缓存：删掉某个镜头的文件就只重做那一个。每次生成的任务号、模型、种子、提示词记在 `footage/raw/*.json` 和 `footage/keys/*.json`，运行日志在 `output/runway_log.txt`。
 
 ## 目录
 
 ```
-production/  shots.json 分镜数据；SHOTLIST.md 可读分镜；generate_fal.py AI 生成流程；
-             retime.py 按台词长度调整镜头时长；assemble.py 剪辑合成（动态分镜 / 4K 成片）
+production/  shots.json 分镜数据（含每个台词镜头的拍法 sync）；SHOTLIST.md 可读分镜；
+             generate_runway.py Runway 生成流程；generate_fal.py fal.ai 备选流程；
+             retime.py 按台词长度调整镜头时长；assemble.py 剪辑合成
 audio/       make_voices.py 角色音色参考；make_dialogue.py 台词演绎；sound_design.py 配乐+音效+台词摆位
-render/      inserts.* 4K 屏幕镜头与品牌落版（render_inserts.mjs 渲染）
-footage/     AI 生成的定妆图、关键帧、视频（不入库）
-output/      动态分镜、4K 插入镜头、成片
+render/      inserts.* 4K 屏幕镜头与品牌落版；upscale.py 本地 4K 放大
+footage/     refs/ 选定的定妆图；keys/ 选定的关键帧；clips/ Runway 镜头（入库，重做要花积分）；
+             4k/、raw/、models/ 为可重新生成的中间文件（不入库）
+output/      成片、审片版、插入镜头
 ```
 
 ## 说明
 
-- 人物族裔与长相是我先定的（船长与大副为东亚面孔，海盗头目为魁梧的欧洲面孔），改 `shots.json` 里的 `characters` 即可，所有镜头会一起更新。
 - 屏幕里的界面是示意，数据都是示例（示例客户 A 等）；有真实软件截图后可以替换 `render/inserts.js` 里的界面。
 - 品牌落版要求黑底，而附件 logo 是深蓝色，直接放在黑底上看不清，所以放在一块暖白底板上，颜色未改。如果有白色反白版 logo，可以直接替换。
-- 声音都是程序生成或 Apache-2.0 模型生成，没有第三方版权素材。
+- 声音都是程序生成或 Apache-2.0 模型生成，没有第三方版权素材；画面为 Runway 生成。
+- 也可以不用 Runway，改用 fal.ai（`FAL_KEY`），流程见 `production/generate_fal.py`。

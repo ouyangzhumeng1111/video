@@ -50,9 +50,9 @@ REF_PROMPTS = {
 
 SHORT = {  # inline handles used inside shot prompts
     "CAPTAIN_HAT": "the captain's battered black tricorn hat",
-    "CAPTAIN": "the captain (East Asian man in his mid-40s, short black beard, worn wine-red frock coat)",
+    "CAPTAIN": "the captain (Chinese man in his mid-40s, short black beard, worn wine-red frock coat)",
     "BOSS": "the pirate boss (huge bearded man in a black leather greatcoat, scar through his left eyebrow)",
-    "MATE": "the first mate (tall, very thin young East Asian man, dark blue waistcoat, red neckerchief)",
+    "MATE": "the first mate (tall, very thin young Chinese man, dark blue waistcoat, red neckerchief)",
     "GUNNER": "a scruffy young pirate gunner with a faded red bandana",
     "BAG": "a black roll-top waterproof dry bag",
     "LAPTOP": "a modern slim space-grey laptop",

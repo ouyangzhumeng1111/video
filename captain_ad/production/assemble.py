@@ -10,6 +10,7 @@ Audio: output/music.wav + sfx.wav + dialogue.wav from audio/sound_design.py,
 music ducked under dialogue, loudness -16 LUFS / -1.5 dBTP.
 
   python3 assemble.py --res 1080 --out captain_animatic_1080p.mp4   # review cut
+  python3 assemble.py --res 1080 --proxy --subs --out captain_review_1080p.mp4  # review cut from the Runway clips, ignores footage/4k
   python3 assemble.py --res 2160 --out captain_4k.mp4 --subs        # final (+ burned subtitles)
 """
 import argparse
@@ -53,12 +54,12 @@ def slate(s, w, h, path):
     im.save(path)
 
 
-def source(s):
+def source(s, proxy=False):
     if s["kind"] == "render_ui":
         return ("video", os.path.join(OUT, "insert_ui_4k.mp4"))
     if s["kind"] == "endcard":
         return ("video", os.path.join(OUT, "insert_end_4k.mp4"))
-    for p in (f"4k/{s['id']}.mp4", f"clips/{s['id']}_ls.mp4", f"clips/{s['id']}.mp4"):
+    for p in ((f"4k/{s['id']}.mp4",) if not proxy else ()) + (f"clips/{s['id']}_ls.mp4", f"clips/{s['id']}.mp4"):
         if os.path.exists(os.path.join(FOOT, p)):
             return ("ai", os.path.join(FOOT, p))
     for p in (f"keys/{s['id']}.png", f"keys/{s['id']}_0.png"):
@@ -67,8 +68,8 @@ def source(s):
     return ("slate", None)
 
 
-def segment(s, w, h, fps, crf, tmp):
-    kind, src = source(s)
+def segment(s, w, h, fps, crf, tmp, proxy=False):
+    kind, src = source(s, proxy)
     out = os.path.join(tmp, f"{s['id']}.mp4")
     dur = f"{s['dur']:.3f}"
     enc = ["-an", "-c:v", "libx264", "-preset", "medium", "-crf", str(crf), "-pix_fmt", "yuv420p", "-r", str(fps), out]
@@ -138,6 +139,7 @@ def main():
     ap.add_argument("--res", type=int, default=1080)
     ap.add_argument("--out", default=None)
     ap.add_argument("--subs", action="store_true")
+    ap.add_argument("--proxy", action="store_true", help="cut from footage/clips even where a 4K upscale exists")
     a = ap.parse_args()
     d = json.load(open(os.path.join(HERE, "shots.json"), encoding="utf-8"))
     h = a.res; w = h * 16 // 9; fps = d["fps"]
@@ -146,7 +148,7 @@ def main():
     kinds = {}
     with open(os.path.join(tmp, "list.txt"), "w") as fh:
         for s in d["shots"]:
-            p, k = segment(s, w, h, fps, 12 if h > 1500 else 18, tmp)
+            p, k = segment(s, w, h, fps, 12 if h > 1500 else 18, tmp, a.proxy)
             kinds[k] = kinds.get(k, 0) + 1
             fh.write(f"file '{os.path.basename(p)}'\n")
     pic = os.path.join(tmp, "picture.mp4")

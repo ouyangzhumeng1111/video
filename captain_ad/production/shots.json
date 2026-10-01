@@ -8,10 +8,10 @@
  "duration": 55.58,
  "style": "cinematic photorealistic live-action film still, 1700s Caribbean high-seas adventure, shot on ARRI Alexa 65 with anamorphic lenses, shallow depth of field, cold steel-blue ocean light with warm orange fire accents, drifting gunpowder smoke and embers, natural skin texture, subtle film grain, no text, no watermark",
  "characters": {
-  "CAPTAIN": "the merchant captain: East Asian man in his mid-40s, short neatly trimmed black beard with a few grey hairs, weathered tanned face, tired intelligent eyes, worn wine-red wool frock coat with tarnished brass buttons over a cream linen shirt, dark trousers, leather boots",
+  "CAPTAIN": "the merchant captain: Chinese man in his mid-40s, short neatly trimmed black beard with a few grey hairs, weathered tanned face, tired intelligent eyes, worn wine-red wool frock coat with tarnished brass buttons over a cream linen shirt, dark trousers, leather boots",
   "CAPTAIN_HAT": "a battered black tricorn captain's hat",
   "BOSS": "the pirate boss: huge broad-shouldered man in his 50s, thick dark beard, scar through his left eyebrow, long dark hair tied back, heavy black leather greatcoat, silver rings, a curved cutlass",
-  "MATE": "the first mate: tall, very thin East Asian man in his late 20s, clean-shaven, earnest serious face, dark blue sailor's waistcoat over a rolled-up white shirt, red neckerchief",
+  "MATE": "the first mate: tall, very thin young Chinese man in his late 20s, clean-shaven, earnest serious face, dark blue sailor's waistcoat over a rolled-up white shirt, red neckerchief",
   "GUNNER": "a young scruffy pirate gunner with a faded red bandana and a lit linstock",
   "MERCHANT_SHIP": "a weathered three-masted merchant sailing ship with an oak deck, rope rigging and a wooden cabin door below the quarterdeck",
   "PIRATE_SHIP": "a pirate galleon with enormous black sails and rows of cannons, tied alongside",
@@ -39,8 +39,8 @@
    "dur": 3.29,
    "kind": "ai_lipsync",
    "zh": "过肩中近景：海盗头目贴近船长，身后黑帆遮天，甲板碎木硝烟。",
-   "image": "over-the-shoulder medium close-up of BOSS leaning in close to CAPTAIN, enormous black sails filling the sky behind, splintered wood and smoke on the deck",
-   "motion": "BOSS leans in and speaks in a low menacing voice, black sails ripple",
+   "image": "over-the-shoulder medium close-up from behind BOSS: the back of his head and his broad black-leather shoulder fill the left of frame as he leans in close to CAPTAIN, whose tense face is sharp in focus, enormous black sails filling the sky behind, splintered wood and smoke on the deck",
+   "motion": "BOSS leans in closer, his head turning slightly as he talks, CAPTAIN stays silent with his jaw clenched and swallows, black sails ripple",
    "chars": [
     "BOSS",
     "CAPTAIN",
@@ -53,7 +53,8 @@
     "offset": 0.15,
     "spill": 0.8
    },
-   "dur_design": 2.4
+   "dur_design": 2.4,
+   "sync": "away"
   },
   {
    "id": "S03",
@@ -113,12 +114,11 @@
    "t": 8.59,
    "dur": 2.0,
    "kind": "ai_lipsync",
-   "zh": "中近景：头目摘下船长帽子戴在自己头上：“谢谢招待。”",
-   "image": "medium close-up, BOSS takes CAPTAIN_HAT off the head of CAPTAIN and puts it on his own head, smug",
+   "zh": "中近景：头目把船长的帽子戴到自己头上，得意地说：“谢谢招待。”",
+   "image": "medium close-up of BOSS alone in frame, centred and facing camera, wearing CAPTAIN_HAT he has just taken from the captain, smug half-grin, black sails and smoke behind",
    "motion": "he lifts the hat, places it on his own head and speaks with a smug grin",
    "chars": [
     "BOSS",
-    "CAPTAIN",
     "CAPTAIN_HAT"
    ],
    "line": {
@@ -127,7 +127,8 @@
     "emo": "轻蔑、得意、慢条斯理",
     "offset": 0.15
    },
-   "dur_design": 2.0
+   "dur_design": 2.0,
+   "sync": "avatar"
   },
   {
    "id": "S08",
@@ -161,7 +162,8 @@
     "offset": 0.15,
     "spill": 1.0
    },
-   "dur_design": 2.0
+   "dur_design": 2.0,
+   "sync": "wide"
   },
   {
    "id": "S10",
@@ -170,7 +172,7 @@
    "kind": "ai",
    "zh": "中景：船长冲到栏杆边，突然停住。",
    "image": "medium shot, CAPTAIN runs to the ship's rail, smoke swirling",
-   "motion": "he sprints to the rail and stops abruptly",
+   "motion": "he lurches to a stop against the rail, grips it with both hands and freezes, breathing hard; he is the only person on deck, nobody else enters the frame",
    "chars": [
     "CAPTAIN",
     "MERCHANT_SHIP"
@@ -235,7 +237,7 @@
    "dur": 1.58,
    "kind": "ai_lipsync",
    "zh": "近景：船长喘着气：“不是这个……在哪儿？！”",
-   "image": "close-up of CAPTAIN in the smoky cabin, panting, desperate",
+   "image": "close-up of CAPTAIN alone in frame, centred and facing camera, in the smoky cabin, panting, sweat and soot on his face, desperate",
    "motion": "he mutters desperately while searching",
    "chars": [
     "CAPTAIN"
@@ -247,7 +249,8 @@
     "offset": 0.15,
     "spill": 1.1
    },
-   "dur_design": 1.3
+   "dur_design": 1.3,
+   "sync": "avatar"
   },
   {
    "id": "S16",
@@ -348,7 +351,7 @@
    "dur": 3.16,
    "kind": "ai_lipsync",
    "zh": "中近景：大副看着那个包，声音发颤。",
-   "image": "medium close-up of MATE in the lifeboat looking at the bag, soot on his face",
+   "image": "medium close-up of MATE alone in frame, centred and facing camera, in the lifeboat looking down at the bag just below frame, soot on his face, shaken",
    "motion": "he stares at the bag and speaks, voice shaking",
    "chars": [
     "MATE",
@@ -361,7 +364,8 @@
     "offset": -0.5,
     "prelap": -0.5
    },
-   "dur_design": 2.2
+   "dur_design": 2.2,
+   "sync": "avatar"
   },
   {
    "id": "S24",
@@ -370,7 +374,7 @@
    "kind": "ai",
    "zh": "近景：船长没回答，拉开防水包，取出现代笔记本，掀开屏幕。",
    "image": "close-up, CAPTAIN unrolls BAG and pulls out LAPTOP, opening the lid in the rocking lifeboat",
-   "motion": "he pulls the laptop out and opens the screen",
+   "motion": "seated in the lifeboat he slowly lifts the lid of the closed laptop with one hand, the laptop stays whole and rigid in his lap, the screen still dark",
    "chars": [
     "CAPTAIN",
     "BAG",
@@ -406,7 +410,7 @@
    "dur": 3.52,
    "kind": "ai_lipsync",
    "zh": "全片关键表演：船长闭上眼，肩膀松下来，长长吐出一口气：“还好……账号还在。”",
-   "image": "close-up of CAPTAIN lit by the laptop screen glow, eyes closing, tension leaving his face",
+   "image": "close-up of CAPTAIN alone in frame, centred and facing camera, lit from below by the cool glow of the laptop screen, eyes half closed, the tension leaving his face",
    "motion": "he closes his eyes, his shoulders drop, a long shaky exhale of relief as if he just saved his own future, then speaks softly",
    "chars": [
     "CAPTAIN"
@@ -417,16 +421,17 @@
     "emo": "如释重负、带着喘息、轻声而哽咽",
     "offset": 0.35
    },
-   "dur_design": 2.6
+   "dur_design": 2.6,
+   "sync": "avatar"
   },
   {
    "id": "S28",
    "t": 39.15,
    "dur": 1.96,
    "kind": "ai_lipsync",
-   "zh": "中景：大副指着身后燃烧的船。",
-   "image": "medium shot, MATE points back at the burning merchant ship behind them",
-   "motion": "he points and shouts",
+   "zh": "中景（背身）：大副指着燃烧的船。",
+   "image": "medium shot from behind MATE in the lifeboat, his back to camera, arm outstretched pointing at the burning merchant ship on the water ahead, fire lighting his silhouette",
+   "motion": "he jabs his arm toward the burning ship, shoulders shaking as he shouts, flames flicker on the water",
    "chars": [
     "MATE",
     "MERCHANT_SHIP"
@@ -437,7 +442,8 @@
     "emo": "激动、委屈、带着哭腔地大声说",
     "offset": 0.15
    },
-   "dur_design": 1.6
+   "dur_design": 1.6,
+   "sync": "away"
   },
   {
    "id": "S29",
@@ -445,7 +451,7 @@
    "dur": 3.73,
    "kind": "ai_lipsync",
    "zh": "中近景：船长抹去脸上的灰，看着屏幕，终于笑了（音乐升起）。",
-   "image": "medium close-up of CAPTAIN wiping soot from his face, looking at the glowing laptop, beginning to smile",
+   "image": "medium close-up of CAPTAIN alone in frame, centred and facing camera, soot smeared on his face, lit by the glow of the laptop just below frame, beginning to smile",
    "motion": "he wipes his face, smiles with renewed confidence and speaks",
    "chars": [
     "CAPTAIN",
@@ -458,7 +464,8 @@
     "offset": 0.15,
     "spill": 0.8
    },
-   "dur_design": 3.2
+   "dur_design": 3.2,
+   "sync": "avatar"
   },
   {
    "id": "S30",
@@ -480,9 +487,9 @@
    "t": 46.04,
    "dur": 1.26,
    "kind": "ai_lipsync",
-   "zh": "中景：海盗手下转动炮口：“老大，开炮？”",
-   "image": "medium shot, GUNNER swings a cannon toward the lifeboat, linstock burning",
-   "motion": "he turns the cannon and asks eagerly",
+   "zh": "中景（侧脸，半掩在炮身与硝烟后）：海盗手下转动炮口：“老大，开炮？”",
+   "image": "medium shot, GUNNER in profile behind a cannon, half of his face hidden by the barrel and drifting smoke, swinging the cannon toward the lifeboat, linstock burning",
+   "motion": "he heaves the cannon round toward the lifeboat and calls out over his shoulder, smoke drifting across his face",
    "chars": [
     "GUNNER",
     "PIRATE_SHIP"
@@ -494,7 +501,8 @@
     "offset": 0.15,
     "spill": 0.5
    },
-   "dur_design": 1.2
+   "dur_design": 1.2,
+   "sync": "away"
   },
   {
    "id": "S32",
@@ -515,12 +523,11 @@
    "t": 48.3,
    "dur": 2.48,
    "kind": "ai_lipsync",
-   "zh": "中近景：他猛地压下手下的火把：“别开炮！问他——账号怎么开！”",
-   "image": "medium close-up, BOSS slams his hand down on the gunner's linstock, deadly serious",
+   "zh": "中近景：头目一把按下手下的火把（手伸出画外）：“别开炮！问他——账号怎么开！”",
+   "image": "medium close-up of BOSS alone in frame, centred and facing camera, wearing CAPTAIN_HAT, one arm reaching down out of frame pressing a burning linstock away, deadly serious",
    "motion": "he pushes the linstock down and shouts with dead-serious urgency",
    "chars": [
     "BOSS",
-    "GUNNER",
     "CAPTAIN_HAT"
    ],
    "line": {
@@ -529,7 +536,8 @@
     "emo": "急切而严肃、一本正经地大声喊",
     "offset": 0.15
    },
-   "dur_design": 1.6
+   "dur_design": 1.6,
+   "sync": "avatar"
   },
   {
    "id": "S34",

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>原来，你对谁都这么说</title>
+<style>
+  html, body { margin: 0; background: #000; }
+  #screen { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #000;
+            font-family: "Noto Sans CJK SC", sans-serif; color: #111827; -webkit-font-smoothing: antialiased; }
+  .scene { position: absolute; inset: 0; display: none; overflow: hidden; }
+  .cam { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 0 0; overflow: hidden; }
+  .abs { position: absolute; }
+  .status { position: absolute; left: 0; top: 0; width: 1080px; height: 112px; box-sizing: border-box; padding: 26px 70px 0 84px;
+            display: flex; justify-content: space-between; align-items: center; font-size: 40px; font-weight: 600; z-index: 5; }
+  .status .icons { display: flex; gap: 18px; align-items: center; }
+  .light { background: #f4f5f7; }
+
+  /* mail */
+  .navbar { position: absolute; top: 112px; left: 0; width: 1080px; height: 120px; box-sizing: border-box; padding: 0 56px;
+            display: flex; align-items: center; justify-content: space-between; font-size: 42px; }
+  .bigtitle { position: absolute; left: 56px; top: 220px; font-size: 76px; font-weight: 700; letter-spacing: 1px; }
+  .search { position: absolute; left: 56px; top: 340px; width: 968px; height: 92px; border-radius: 28px; background: #e6e8ec;
+            color: #8a919c; font-size: 38px; display: flex; align-items: center; padding-left: 36px; box-sizing: border-box; }
+  .list { position: absolute; left: 0; top: 470px; width: 1080px; }
+  .row { position: relative; height: 226px; box-sizing: border-box; padding: 26px 56px 0 190px; background: #fff; border-bottom: 2px solid #eceef1; }
+  .row .av { position: absolute; left: 56px; top: 34px; width: 104px; height: 104px; border-radius: 52px; color: #fff; font-size: 46px;
+             font-weight: 600; display: flex; align-items: center; justify-content: center; }
+  .row .from { font-size: 40px; font-weight: 700; color: #111827; }
+  .row .time { position: absolute; right: 56px; top: 30px; font-size: 32px; color: #8a919c; }
+  .row .subj { font-size: 38px; color: #1f2937; margin-top: 8px; }
+  .row .prev { font-size: 33px; color: #8a919c; margin-top: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row .dot { position: absolute; left: 22px; top: 76px; width: 22px; height: 22px; border-radius: 11px; }
+  .row.dim .from { font-weight: 500; color: #4b5563; }
+  .tapfx { position: absolute; border-radius: 50%; background: rgba(0,0,0,0.10); pointer-events: none; }
+
+  .mailbody { position: absolute; left: 0; top: 232px; width: 1080px; height: 1688px; background: #fff; overflow: hidden; }
+  .mailinner { position: absolute; left: 0; top: 0; width: 1080px; }
+  .subject { margin: 36px 64px 0; font-size: 60px; font-weight: 700; line-height: 1.32; color: #111827; }
+  .typo { position: relative; display: inline-block; }
+  .sender { position: relative; margin: 40px 64px 0; height: 130px; }
+  .sender .av { position: absolute; left: 0; top: 4px; width: 116px; height: 116px; border-radius: 58px; color: #fff; font-size: 50px;
+                font-weight: 600; display: flex; align-items: center; justify-content: center; }
+  .sender .nm { position: absolute; left: 146px; top: 6px; font-size: 42px; font-weight: 700; }
+  .sender .to { position: absolute; left: 146px; top: 66px; font-size: 33px; color: #6b7280; }
+  .hr { margin: 34px 64px 0; height: 2px; background: #eceef1; }
+  .para { margin: 38px 64px 0; font-size: 44px; line-height: 1.7; color: #1f2937; }
+  .co { border-radius: 10px; padding: 0 4px; margin: 0 -4px; }
+  .attach { margin: 46px 64px 0; height: 168px; border-radius: 30px; border: 2px solid #e5e7eb; position: relative; background: #fafafb; }
+  .attach .ic { position: absolute; left: 32px; top: 30px; width: 92px; height: 108px; border-radius: 14px; background: #e5484d; color: #fff;
+                font-size: 30px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .attach .fn { position: absolute; left: 156px; top: 36px; font-size: 40px; font-weight: 600; }
+  .attach .fs { position: absolute; left: 156px; top: 96px; font-size: 32px; color: #8a919c; }
+
+  /* chat */
+  .chat { background: #eceef2; }
+  .chathead { position: absolute; top: 112px; left: 0; width: 1080px; height: 150px; background: #f7f7f9; border-bottom: 2px solid #e2e4e8; z-index: 4; }
+  .chathead .back { position: absolute; left: 48px; top: 36px; font-size: 64px; color: #111827; }
+  .chathead .ttl { position: absolute; left: 0; width: 1080px; top: 22px; text-align: center; font-size: 44px; font-weight: 700; }
+  .chathead .sub { position: absolute; left: 0; width: 1080px; top: 88px; text-align: center; font-size: 30px; color: #6b7280; height: 40px; }
+  .msgs { position: absolute; left: 0; top: 262px; width: 1080px; height: 1490px; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
+  .mwrap { position: relative; overflow: hidden; flex: none; }
+  .msg { position: relative; padding: 18px 40px 18px; transform-origin: 50% 100%; }
+  .msg .av { position: absolute; top: 18px; width: 100px; height: 100px; border-radius: 22px; color: #fff; font-size: 44px; font-weight: 600;
+             display: flex; align-items: center; justify-content: center; }
+  .msg.left .av { left: 40px; } .msg.right .av { right: 40px; }
+  .msg .who { font-size: 29px; color: #8a919c; margin: 0 0 8px 0; }
+  .msg.left .col { margin-left: 136px; } .msg.right .col { margin-right: 136px; display: flex; flex-direction: column; align-items: flex-end; }
+  .bubble { display: inline-block; max-width: 700px; border-radius: 34px; padding: 26px 36px; font-size: 42px; line-height: 1.5; box-sizing: border-box; }
+  .msg.left .bubble { background: #fff; color: #111827; border-top-left-radius: 10px; }
+  .msg.right .bubble { background: #4f7cff; color: #fff; border-top-right-radius: 10px; }
+  .msg .bubble.media { padding: 12px; background: #fff !important; }
+  .voice { display: flex; align-items: center; gap: 22px; }
+  .voice .bars { display: flex; align-items: center; gap: 7px; height: 64px; }
+  .voice .bars i { display: block; width: 8px; border-radius: 4px; }
+  .voice .len { font-size: 36px; }
+  .trans { margin-top: 12px; max-width: 700px; background: rgba(255,255,255,0.75); color: #374151; border-radius: 22px; padding: 18px 28px;
+           font-size: 36px; line-height: 1.5; box-sizing: border-box; min-height: 74px; }
+  .thumb { position: relative; overflow: hidden; border-radius: 20px; border: 2px solid #e5e7eb; background: #fff; }
+  .thumb > .scene { display: block; transform-origin: 0 0; }
+  .link { width: 700px; background: #fff; border-radius: 30px; padding: 30px 34px; box-sizing: border-box; position: relative; min-height: 220px; }
+  .link .lt { font-size: 40px; font-weight: 700; width: 470px; }
+  .link .ld { font-size: 31px; color: #6b7280; margin-top: 12px; width: 470px; line-height: 1.45; }
+  .link .li { position: absolute; right: 34px; top: 34px; width: 130px; height: 130px; border-radius: 28px; background: #0b2146; color: #d9b373;
+              font-size: 50px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+  .link .ls { font-size: 26px; color: #9aa1ab; margin-top: 18px; border-top: 2px solid #eef0f3; padding-top: 14px; }
+  .inputbar { position: absolute; left: 0; bottom: 0; width: 1080px; height: 168px; background: #f7f7f9; border-top: 2px solid #e2e4e8; z-index: 4; }
+  .inputbar .field { position: absolute; left: 140px; top: 26px; width: 720px; height: 96px; border-radius: 22px; background: #fff; font-size: 40px;
+                     line-height: 96px; padding-left: 30px; box-sizing: border-box; color: #111827; overflow: hidden; white-space: nowrap; }
+  .inputbar .mic, .inputbar .plus { position: absolute; top: 34px; width: 80px; height: 80px; border-radius: 40px; border: 4px solid #4b5563;
+                     box-sizing: border-box; font-size: 46px; display: flex; align-items: center; justify-content: center; color: #4b5563; }
+  .inputbar .mic { left: 40px; } .inputbar .plus { right: 40px; }
+  .caret { display: inline-block; width: 4px; height: 50px; background: #4f7cff; vertical-align: -9px; margin-left: 2px; }
+
+  .banner { position: absolute; left: 32px; width: 1016px; height: 196px; border-radius: 44px; background: rgba(250,250,252,0.97);
+            box-shadow: 0 18px 50px rgba(0,0,0,0.22); z-index: 20; }
+  .banner .bi { position: absolute; left: 34px; top: 38px; width: 104px; height: 104px; border-radius: 26px; color: #fff; font-size: 46px; font-weight: 700;
+                display: flex; align-items: center; justify-content: center; }
+  .banner .bt { position: absolute; left: 168px; top: 36px; font-size: 38px; font-weight: 700; }
+  .banner .bx { position: absolute; left: 168px; top: 96px; width: 800px; font-size: 36px; color: #374151; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .banner .bw { position: absolute; right: 40px; top: 40px; font-size: 30px; color: #8a919c; }
+
+  .kbd { position: absolute; left: 0; bottom: 0; width: 1080px; height: 690px; background: #d4d7dd; z-index: 6; }
+  .kbd .cand { position: absolute; left: 0; top: 0; width: 1080px; height: 96px; background: #eceef1; font-size: 40px; line-height: 96px; padding-left: 40px; box-sizing: border-box; color: #111827; }
+  .kbd .k { position: absolute; height: 118px; border-radius: 14px; background: #fff; box-shadow: 0 3px 0 #a3a8b0; font-size: 46px; color: #111827;
+            display: flex; align-items: center; justify-content: center; }
+  .kbd.dark { background: #1f2a3d; } .kbd.dark .cand { background: #26324a; color: #f6f1e8; }
+  .kbd.dark .k { background: #3a4660; color: #f6f1e8; box-shadow: 0 3px 0 #141c2b; }
+
+  .chip { position: absolute; left: 50%; top: 150px; transform: translateX(-50%); padding: 14px 34px; border-radius: 40px; background: rgba(17,24,39,0.78);
+          color: #fff; font-size: 32px; white-space: nowrap; z-index: 30; letter-spacing: 1px; }
+
+  /* TradeMind SDR */
+  .tm { background: #081a38; color: #f6f1e8; }
+  .tm .hdr { position: absolute; left: 64px; top: 150px; font-size: 58px; font-weight: 700; }
+  .tm .brand { position: absolute; right: 64px; top: 168px; font-size: 32px; color: #d9b373; font-weight: 700; letter-spacing: 1px; }
+  .tm .card { position: absolute; left: 56px; width: 968px; border-radius: 34px; background: #0f2650; border: 2px solid rgba(217,179,115,0.28); box-sizing: border-box; }
+  .tm .lab { font-size: 32px; color: #9dbad9; }
+  .tm .fld { margin-top: 12px; height: 104px; border-radius: 22px; background: #081a38; border: 2px solid rgba(157,186,217,0.35); font-size: 44px;
+             line-height: 104px; padding-left: 30px; box-sizing: border-box; color: #f6f1e8; }
+  .tm .btn { height: 112px; border-radius: 26px; background: #d9b373; color: #0b2146; font-size: 44px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+  .tm .res { position: absolute; left: 56px; width: 968px; height: 210px; border-radius: 30px; background: #0f2650; box-sizing: border-box; padding: 30px 36px; }
+  .tm .res .n { font-size: 44px; font-weight: 700; }
+  .tm .res .m { font-size: 30px; color: #9dbad9; margin-top: 10px; }
+  .tm .res .pct { position: absolute; right: 36px; top: 32px; font-size: 32px; color: #0b2146; background: #d9b373; border-radius: 20px; padding: 6px 20px; font-weight: 800; }
+  .tm .tag { display: inline-block; font-size: 28px; color: #d9b373; border: 2px solid rgba(217,179,115,0.6); border-radius: 18px; padding: 4px 18px; margin: 14px 12px 0 0; }
+  .tm .sec { position: absolute; left: 64px; font-size: 36px; color: #d9b373; font-weight: 700; letter-spacing: 2px; }
+  .toast { position: absolute; left: 340px; top: 860px; width: 400px; height: 200px; border-radius: 40px; background: rgba(15,38,80,0.95); border: 2px solid #d9b373;
+           color: #f6f1e8; font-size: 46px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 20px; z-index: 25; }
+
+  /* files */
+  .frow { position: relative; height: 200px; background: #fff; border-bottom: 2px solid #eceef1; }
+  .frow .fi { position: absolute; left: 56px; top: 44px; width: 96px; height: 112px; border-radius: 14px; color: #fff; font-size: 28px; font-weight: 700;
+              display: flex; align-items: center; justify-content: center; }
+  .frow .fn { position: absolute; left: 186px; top: 48px; font-size: 40px; font-weight: 600; }
+  .frow .fm { position: absolute; left: 186px; top: 110px; font-size: 32px; color: #8a919c; }
+  .frow .ck { position: absolute; right: 56px; top: 64px; width: 72px; height: 72px; border-radius: 36px; border: 4px solid #c3c8d0; box-sizing: border-box;
+              color: #fff; font-size: 44px; display: flex; align-items: center; justify-content: center; }
+
+  .end { background: #000; }
+</style>
+</head>
+<body>
+<div id="screen"></div>
+<script src="film.js"></script>
+</body>
+</html>

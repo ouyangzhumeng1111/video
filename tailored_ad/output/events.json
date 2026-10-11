@@ -1,0 +1,797 @@
+[
+ {
+  "t": 0.35,
+  "kind": "sfx",
+  "name": "ding",
+  "gain": 1
+ },
+ {
+  "t": 0.95,
+  "kind": "sfx",
+  "name": "tap",
+  "gain": 1
+ },
+ {
+  "t": 1.05,
+  "kind": "sfx",
+  "name": "swish",
+  "gain": 1
+ },
+ {
+  "t": 1.4,
+  "kind": "line",
+  "id": "L1",
+  "from": 0,
+  "to": null,
+  "fx": "clean"
+ },
+ {
+  "t": 6.2,
+  "kind": "sfx",
+  "name": "tap",
+  "gain": 1
+ },
+ {
+  "t": 6.25,
+  "kind": "sfx",
+  "name": "swish",
+  "gain": 1
+ },
+ {
+  "t": 6.6,
+  "kind": "line",
+  "id": "L1",
+  "from": 3.0500000000000003,
+  "to": 4.31,
+  "fx": "clean"
+ },
+ {
+  "t": 8,
+  "kind": "sfx",
+  "name": "swish",
+  "gain": 0.6
+ },
+ {
+  "t": 8.55,
+  "kind": "line",
+  "id": "L1",
+  "from": 3.0500000000000003,
+  "to": 3.74,
+  "fx": "clean"
+ },
+ {
+  "t": 9.75,
+  "kind": "sfx",
+  "name": "pop",
+  "gain": 1
+ },
+ {
+  "t": 10.25,
+  "kind": "sfx",
+  "name": "pop",
+  "gain": 1
+ },
+ {
+  "t": 10.39,
+  "kind": "sfx",
+  "name": "blip",
+  "gain": 1
+ },
+ {
+  "t": 10.45,
+  "kind": "line",
+  "id": "L2",
+  "from": 0,
+  "to": null,
+  "fx": "phone"
+ },
+ {
+  "t": 15.5,
+  "kind": "sfx",
+  "name": "pop",
+  "gain": 1
+ },
+ {
+  "t": 15.95,
+  "kind": "sfx",
+  "name": "pop",
+  "gain": 1
+ },
+ {
+  "t": 16.45,
+  "kind": "sfx",
+  "name": "swish",
+  "gain": 0.5
+ },
+ {
+  "t": 18.05,
+  "kind": "sfx",
+  "name": "swish",
+  "gain": 0.4
+ },
+ {
+  "t": 18.65,
+  "kind": "sfx",
+  "name": "pop",
+  "gain": 1
+ },
+ {
+  "t": 19.1,
+  "kind": "sfx",
+  "name": "pop",
+  "gain": 1
+ },
+ {
+  "t": 19.24,
+  "kind": "sfx",
+  "name": "blip",
+  "gain": 1
+ },
+ {
+  "t": 19.3,
+  "kind": "line",
+  "id": "L3",
+  "from": 0,
+  "to": null,
+  "fx": "phone"
+ },
+ {
+  "t": 21,
+  "kind": "cue",
+  "name": "music_stop"
+ },
+ {
+  "t": 21.22,
+  "kind": "sfx",
+  "name": "shutter",
+  "gain": 1
+ },
+ {
+  "t": 21.4,
+  "kind": "sfx",
+  "name": "pop",
+  "gain": 1
+ },
+ {
+  "t": 23.65,
+  "kind": "sfx",
+  "name": "banner",
+  "gain": 1
+ },
+ {
+  "t": 23.95,
+  "kind": "sfx",
+  "name": "tap",
+  "gain": 1
+ },
+ {
+  "t": 24.05,
+  "kind": "sfx",
+  "name": "swish",
+  "gain": 0.7
+ },
+ {
+  "t": 24.4,
+  "kind": "sfx",
+  "name": "pop",
+  "gain": 1
+ },
+ {
+  "t": 24.75,
+  "kind": "sfx",
+  "name": "pop",
+  "gain": 1
+ },
+ {
+  "t": 24.89,
+  "kind": "sfx",
+  "name": "blip",
+  "gain": 1
+ },
+ {
+  "t": 24.95,
+  "kind": "line",
+  "id": "L4",
+  "from": 0,
+  "to": null,
+  "fx": "phone"
+ },
+ {
+  "t": 28,
+  "kind": "sfx",
+  "name": "rec",
+  "gain": 1
+ },
+ {
+  "t": 28.1,
+  "kind": "line",
+  "id": "L5",
+  "from": 0,
+  "to": null,
+  "fx": "clean"
+ },
+ {
+  "t": 30.36,
+  "kind": "sfx",
+  "name": "sent",
+  "gain": 1
+ },
+ {
+  "t": 31.85,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.8
+ },
+ {
+  "t": 31.95,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.8
+ },
+ {
+  "t": 32.05,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.8
+ },
+ {
+  "t": 32.437,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.8
+ },
+ {
+  "t": 32.51,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.8
+ },
+ {
+  "t": 32.583,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.8
+ },
+ {
+  "t": 32.85,
+  "kind": "sfx",
+  "name": "pop",
+  "gain": 1
+ },
+ {
+  "t": 33.3,
+  "kind": "sfx",
+  "name": "tap",
+  "gain": 1
+ },
+ {
+  "t": 33.45,
+  "kind": "sfx",
+  "name": "swish",
+  "gain": 1
+ },
+ {
+  "t": 33.6,
+  "kind": "cue",
+  "name": "music_in"
+ },
+ {
+  "t": 33.62,
+  "kind": "sfx",
+  "name": "chime",
+  "gain": 0.7
+ },
+ {
+  "t": 34.3,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 34.4,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 34.5,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 34.6,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 34.7,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 34.886,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 34.957,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 35.029,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 35.1,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 35.171,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 35.243,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 35.314,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 35.5,
+  "kind": "sfx",
+  "name": "tap",
+  "gain": 1
+ },
+ {
+  "t": 35.7,
+  "kind": "sfx",
+  "name": "tick",
+  "gain": 0.6
+ },
+ {
+  "t": 35.85,
+  "kind": "sfx",
+  "name": "tick",
+  "gain": 0.6
+ },
+ {
+  "t": 36,
+  "kind": "sfx",
+  "name": "tick",
+  "gain": 0.6
+ },
+ {
+  "t": 36.15,
+  "kind": "sfx",
+  "name": "tick",
+  "gain": 0.6
+ },
+ {
+  "t": 36.75,
+  "kind": "sfx",
+  "name": "tap",
+  "gain": 1
+ },
+ {
+  "t": 37.4,
+  "kind": "sfx",
+  "name": "swish",
+  "gain": 0.6
+ },
+ {
+  "t": 37.9,
+  "kind": "sfx",
+  "name": "glow",
+  "gain": 0.7
+ },
+ {
+  "t": 40.7,
+  "kind": "sfx",
+  "name": "tap",
+  "gain": 1
+ },
+ {
+  "t": 41,
+  "kind": "sfx",
+  "name": "swish",
+  "gain": 0.6
+ },
+ {
+  "t": 41.341,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 41.423,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 41.505,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 41.586,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 41.668,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 41.75,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 41.832,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 41.914,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 41.995,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 42.077,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 42.159,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 42.5,
+  "kind": "line",
+  "id": "L6",
+  "from": 0,
+  "to": null,
+  "fx": "voiceover"
+ },
+ {
+  "t": 42.668,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 42.705,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 42.741,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 42.777,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 42.814,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 42.85,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 42.886,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 42.923,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 42.959,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 42.995,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 43.032,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.7
+ },
+ {
+  "t": 43.15,
+  "kind": "sfx",
+  "name": "tick",
+  "gain": 0.5
+ },
+ {
+  "t": 43.45,
+  "kind": "sfx",
+  "name": "tick",
+  "gain": 0.5
+ },
+ {
+  "t": 43.75,
+  "kind": "sfx",
+  "name": "tick",
+  "gain": 0.5
+ },
+ {
+  "t": 44.45,
+  "kind": "sfx",
+  "name": "tap",
+  "gain": 1
+ },
+ {
+  "t": 44.55,
+  "kind": "sfx",
+  "name": "sent",
+  "gain": 1
+ },
+ {
+  "t": 44.62,
+  "kind": "sfx",
+  "name": "chime",
+  "gain": 0.6
+ },
+ {
+  "t": 45.2,
+  "kind": "sfx",
+  "name": "swish",
+  "gain": 0.3
+ },
+ {
+  "t": 46.3,
+  "kind": "sfx",
+  "name": "swish",
+  "gain": 0.3
+ },
+ {
+  "t": 46.95,
+  "kind": "sfx",
+  "name": "tap",
+  "gain": 1
+ },
+ {
+  "t": 47.05,
+  "kind": "sfx",
+  "name": "swish",
+  "gain": 0.5
+ },
+ {
+  "t": 47.3,
+  "kind": "line",
+  "id": "L7",
+  "from": 0,
+  "to": null,
+  "fx": "clean"
+ },
+ {
+  "t": 47.39,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.75
+ },
+ {
+  "t": 47.53,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.75
+ },
+ {
+  "t": 47.73,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.75
+ },
+ {
+  "t": 47.87,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.75
+ },
+ {
+  "t": 48.13,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.75
+ },
+ {
+  "t": 48.43,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.75
+ },
+ {
+  "t": 48.63,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.75
+ },
+ {
+  "t": 48.89,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.75
+ },
+ {
+  "t": 50.09,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.75
+ },
+ {
+  "t": 50.25,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.75
+ },
+ {
+  "t": 50.39,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.75
+ },
+ {
+  "t": 50.57,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.75
+ },
+ {
+  "t": 50.83,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.75
+ },
+ {
+  "t": 51.41,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.75
+ },
+ {
+  "t": 51.57,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.75
+ },
+ {
+  "t": 51.617,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.75
+ },
+ {
+  "t": 51.663,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.75
+ },
+ {
+  "t": 51.71,
+  "kind": "sfx",
+  "name": "key",
+  "gain": 0.75
+ },
+ {
+  "t": 52.1,
+  "kind": "sfx",
+  "name": "tap",
+  "gain": 1
+ },
+ {
+  "t": 52.18,
+  "kind": "sfx",
+  "name": "sent",
+  "gain": 1
+ },
+ {
+  "t": 52.5,
+  "kind": "sfx",
+  "name": "ding",
+  "gain": 1
+ },
+ {
+  "t": 52.95,
+  "kind": "sfx",
+  "name": "tap",
+  "gain": 1
+ },
+ {
+  "t": 53.05,
+  "kind": "sfx",
+  "name": "swish",
+  "gain": 0.5
+ },
+ {
+  "t": 53.35,
+  "kind": "sfx",
+  "name": "tick",
+  "gain": 0.7
+ },
+ {
+  "t": 53.6,
+  "kind": "sfx",
+  "name": "tick",
+  "gain": 0.7
+ },
+ {
+  "t": 53.85,
+  "kind": "sfx",
+  "name": "tick",
+  "gain": 0.7
+ },
+ {
+  "t": 54.2,
+  "kind": "sfx",
+  "name": "banner",
+  "gain": 0.8
+ },
+ {
+  "t": 55,
+  "kind": "sfx",
+  "name": "swish",
+  "gain": 0.4
+ },
+ {
+  "t": 58.55,
+  "kind": "cue",
+  "name": "music_hit"
+ }
+]

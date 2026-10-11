@@ -1,0 +1,7 @@
+render/node_modules/
+output/frames/
+output/*.wav
+output/stills/
+output/picture_4k.mp4
+output/render_log.txt
+audio/takes/old/
